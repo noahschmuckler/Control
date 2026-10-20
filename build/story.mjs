@@ -219,6 +219,7 @@ export function storyHtml() {
 <nav class="topnav"><div class="navin">
   <a href="#top" class="brand">CS Agreement Builder</a>
   <a href="#problem">Problem</a><a href="#blocks">Blocks</a><a href="#tier">Risk tier</a><a href="#patients">Two patients</a><a href="#segments">Segments</a><a href="#core">Core text</a><a href="#governance">Governance</a><a href="#references">References</a>
+  <a href="builder.html" class="alt-link">Contract builder</a>
   <a href="index.html" class="alt-link">← Classic version</a>
   <a href="${DOCX}" class="dl" download>Word doc ↓</a>
 </div><div class="progress"><i></i></div></nav>
@@ -229,7 +230,7 @@ ${qrWidget(STORY_URL)}
     <p class="eyebrow">QI / Controlled Substances Committee</p>
     <h1><span class="ln">One agreement.</span><span class="ln">Every patient.</span></h1>
     <p class="sub">A modular controlled-substance prescribing agreement for New York and New Jersey — opioids, benzodiazepines and stimulants — that scales to each patient's actual risk.</p>
-    <div class="ctarow"><a class="cta" href="${DOCX}" download>Download the clause library (Word)</a><a class="cta ghost" href="index.html">View the classic version</a></div>
+    <div class="ctarow"><a class="cta" href="${DOCX}" download>Download the clause library (Word)</a><a class="cta ghost" href="builder.html">Open the contract builder →</a><a class="cta ghost" href="index.html">View the classic version</a></div>
     <p class="keyhint">Scroll to advance — or use <kbd>→</kbd> / <kbd>PgDn</kbd> to step through, <kbd>←</kbd> / <kbd>PgUp</kbd> to go back.</p>
   </div>
   ${heroDoc()}
@@ -258,6 +259,7 @@ ${chapter({ id: 'references', num: '08', kicker: 'References', title: 'Cited aut
   <h2>Take it with you</h2>
   <p class="lede">The Word document contains every section with a short explainer, the inclusion rule for each block, and its exact text and authority.</p>
   <a class="cta" href="${DOCX}" download>Download the clause library (.docx)</a>
+  <p><a href="builder.html">Or build an agreement live in the contract builder →</a></p>
   <p class="foot">Clause library v${LIB.schema_version} · Scope: New York and New Jersey · <a href="index.html">Classic version</a></p>
 </div></section>
 </main>

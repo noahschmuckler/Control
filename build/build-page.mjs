@@ -10,6 +10,7 @@ import {
 } from './fragments.mjs';
 import { qrWidget, QR_SCRIPT, PAGES_URL } from './qr.mjs';
 import { storyHtml } from './story.mjs';
+import { builderHtml } from './builder.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -35,6 +36,7 @@ const html = `<!doctype html>
 <nav class="topnav"><div class="navin">
   <a href="#top" class="brand">CS Agreement Builder</a>
   <a href="#problem">Problem</a><a href="#blocks">Blocks</a><a href="#controls">Controls</a><a href="#patients">Two patients</a><a href="#segments">Segments</a><a href="#core">Core text</a><a href="#governance">Governance</a><a href="#references">References</a>
+  <a href="builder.html" class="alt-link">Contract builder</a>
   <a href="story.html" class="alt-link">Animated version →</a>
   <a href="${DOCX}" class="dl" download>Word doc ↓</a>
 </div></nav>
@@ -50,7 +52,7 @@ ${qrWidget(PAGES_URL)}
     <div><b>${combos}</b><span>distinct clause combinations</span></div>
     <div><b>1</b><span>document</span></div>
   </div>
-  <div class="ctarow"><a class="cta" href="${DOCX}" download>Download the clause library (Word)</a><a class="cta ghost" href="story.html">View the animated version →</a></div>
+  <div class="ctarow"><a class="cta" href="${DOCX}" download>Download the clause library (Word)</a><a class="cta ghost" href="builder.html">Open the contract builder →</a><a class="cta ghost" href="story.html">View the animated version →</a></div>
 </div></header>
 
 <main>
@@ -121,6 +123,7 @@ ${qrWidget(PAGES_URL)}
   <h2>Take it with you</h2>
   <p class="lede">The Word document contains every section with a short explainer, the inclusion rule for each block, and its exact text and authority.</p>
   <a class="cta" href="${DOCX}" download>Download the clause library (.docx)</a>
+  <p><a href="builder.html">Or build an agreement live in the contract builder →</a></p>
   <p class="foot">Clause library ${esc(VERSION_STAMP)} · Scope: New York and New Jersey</p>
 </div></section>
 </main>
@@ -131,4 +134,5 @@ ${QR_SCRIPT}
 
 writeFileSync(join(root, 'index.html'), html);
 writeFileSync(join(root, 'story.html'), storyHtml());
-console.log(`index.html + story.html written — patients: ${assembled.map((p) => `${p.label} ${p.a.inp.risk_tier} ${p.a.included.size} blocks ${p.a.words} words ${p.a.trigger}`).join(' | ')}`);
+writeFileSync(join(root, 'builder.html'), builderHtml());
+console.log(`index.html + story.html + builder.html written — patients: ${assembled.map((p) => `${p.label} ${p.a.inp.risk_tier} ${p.a.included.size} blocks ${p.a.words} words ${p.a.trigger}`).join(' | ')}`);

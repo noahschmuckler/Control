@@ -3,6 +3,7 @@
 // reference catalogue, and the two demonstration patients.
 
 import { readFileSync } from 'node:fs';
+import { makeLogic } from '../assets/cs-logic.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -130,65 +131,8 @@ export const controlForClause = Object.fromEntries(
   CONTROLS.flatMap((c) => c.clauses.map((id) => [id, c])),
 );
 
-// ─── Logic ported from the builder ─────────────────────────────────────
-export function suggestTier(inp) {
-  const high = [];
-  if (inp.sud_history === 'active' && !inp.specialist_involved) high.push('active SUD without specialist involvement');
-  if (inp.combo_opioid_benzo) high.push('concurrent opioid + benzodiazepine');
-  if (inp.concurrent_cs === 'cross-class') high.push('cross-class concurrent controlled substances');
-  if (inp.prior_lost_medication) high.push('prior lost-medication report');
-  if (inp.indication_status === 'none-pending-assessment' && inp.dose_above_threshold) high.push('no indication at high dose');
-  if (high.length > 0) return { tier: 'high-risk', reasons: high };
-
-  const enh = [];
-  if ((inp.sud_history === 'past' || inp.sud_history === 'active') && !inp.specialist_involved) enh.push('SUD history without specialist involvement');
-  if (inp.early_fill_history) enh.push('early-fill history');
-  if (inp.dose_above_threshold) enh.push('dose at or above threshold');
-  if (inp.age_65_plus) enh.push('age ≥ 65');
-  if (inp.indication_status === 'inherited-presumptive') enh.push('inherited-presumptive indication');
-  if (inp.concurrent_cs === 'same-class') enh.push('concurrent same-class controlled substance');
-  if (enh.length > 0) return { tier: 'enhanced', reasons: enh };
-  return { tier: 'standard', reasons: [] };
-}
-
-export function autoNaloxone(cls, t) {
-  if (t.combo_opioid_benzo) return true;
-  const opioidInvolving = cls === 'opioid' || cls === 'multi-class';
-  return opioidInvolving && (t.dose_above_threshold || t.sud_history !== 'none');
-}
-
-function matches(clause, inp) {
-  const c = clause.condition;
-  if (!c) return true;
-  const v = inp[c.field];
-  if (c.in) return c.in.includes(String(v));
-  if (c.eq !== undefined) return v === c.eq;
-  return false;
-}
-
-export function substitute(text, cls) {
-  return text
-    .replace(/\[MEDICATION CLASS\]/g, cls ? LIB.class_labels[cls] : '[MEDICATION CLASS]')
-    .replace(/\[VERSION STAMP\]/g, VERSION_STAMP);
-}
-
-export function assemble(raw) {
-  const sug = suggestTier(raw);
-  const risk_tier = raw.tier_override ?? sug.tier;
-  const naloxone_indicated = raw.naloxone_override ?? autoNaloxone(raw.substance_class, raw);
-  const inp = { ...raw, risk_tier, naloxone_indicated };
-  const sections = [];
-  for (const sec of SECTIONS) {
-    const clauses = sec.clauses.filter((cl) => matches(cl, inp)).map((cl) => ({
-      ...cl, rendered: substitute(cl.text, inp.substance_class),
-    }));
-    if (clauses.length) sections.push({ ...sec, clauses });
-  }
-  const trigger = `.CSAGREE-${LIB.class_codes[inp.substance_class]}-${inp.state}-${LIB.tier_codes[risk_tier]}`;
-  const included = new Set(sections.flatMap((s) => s.clauses.map((c) => c.clause_id)));
-  const words = sections.flatMap((s) => s.clauses).reduce((n, c) => n + c.rendered.split(/\s+/).length, 0);
-  return { inp, suggestion: sug, sections, trigger, included, words, reviewMonths: LIB.next_review_offset_months[risk_tier] };
-}
+// ─── Logic (shared with the in-browser builder) ────────────────────────
+export const { suggestTier, autoNaloxone, substitute, assemble } = makeLogic(LIB);
 
 // ─── Demonstration patients ────────────────────────────────────────────
 const base = {

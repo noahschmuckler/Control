@@ -9,6 +9,8 @@ plus a downloadable Word clause library.
   - smooth wheel scrolling via [Lenis](https://github.com/darkroomengineering/lenis) 1.3.26, vendored to `assets/vendor/` by the build (MIT)
   - presenter keys: `→` / `PgDn` / `Space` step forward, `←` / `PgUp` step back
   - honours `prefers-reduced-motion`; readable without JavaScript
+- `builder.html` — interactive contract builder: pick class, state, indication, SUD history, flags, tier and naloxone; the overview graphic, summary and full agreement text update live (copy, download .txt, shareable link). Linked from both presentations
+- `assets/cs-logic.mjs` — the assembly rules (tier suggestion, naloxone logic, clause selection), shared by the build and the builder page
 - `assets/style.css` (shared), `assets/story.css` + `assets/story.js` (animated page)
 - Both pages carry a fixed QR code linking to their own published URL (set in `build/qr.mjs`)
 - `downloads/Controlled-Substance-Agreement-Clause-Library.docx` — every section, explainer, inclusion rule, authority and exact block text
@@ -19,7 +21,7 @@ plus a downloadable Word clause library.
 
 ```sh
 npm install
-npm run build   # writes index.html, story.html and the .docx
+npm run build   # writes index.html, story.html, builder.html and the .docx
 ```
 
 ## Publish on GitHub Pages
