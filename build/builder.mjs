@@ -21,7 +21,7 @@ const data = {
     a: PATIENTS[0].inputs,
     b: PATIENTS[1].inputs,
     reset: {
-      substance_class: 'opioid', state: 'NY', sud_history: 'none', concurrent_cs: 'none', indication_status: 'inherited-presumptive',
+      substance_class: 'opioid', state: 'NY', sud_history: 'none', concurrent_cs: 'none', indication_status: 'established',
       combo_opioid_benzo: false, age_65_plus: false, dose_above_threshold: false, early_fill_history: false,
       driving_or_safety_sensitive: false, prior_lost_medication: false, specialist_involved: false, tier_override: null, naloxone_override: null,
     },
