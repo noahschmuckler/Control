@@ -1,0 +1,118 @@
+/* Animated (scroll-driven) version. Hidden/initial states apply only when
+   JS is running and the viewer hasn't asked for reduced motion. */
+
+.progress { height: 3px; background: transparent; }
+.progress i { display: block; height: 100%; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
+
+.chapter { padding: 72px 0 40px; }
+.chapter.alt { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+/* hero */
+.shero { min-height: calc(100vh - 44px); display: flex; align-items: center; position: relative; }
+.shero h1 .ln { display: block; }
+.scrollcue { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); color: var(--ink-3); text-decoration: none; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.scrollcue span { font-size: 1.3rem; animation: bob 1.6s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(6px); } }
+
+/* scrolly layout: steps on the left, sticky stage on the right */
+.scrolly { display: grid; grid-template-columns: minmax(260px, 380px) minmax(0, 1fr); gap: 40px; margin: 8px 0 40px; }
+.stage { order: 2; position: sticky; top: 52px; height: calc(100vh - 52px); display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.steps { order: 1; padding: 20vh 0 30vh; }
+.step { min-height: 75vh; display: flex; align-items: center; }
+.scard { background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--c); border-radius: 10px; padding: 18px 20px; box-shadow: var(--shadow); width: 100%; }
+.scard h3 { margin: 4px 0 10px; color: var(--ink); }
+.scard p { color: var(--ink-2); font-size: .95rem; }
+.scard p.small, .scard .small { font-size: .82rem; color: var(--ink-3); }
+.scard .sn { font: 700 .7rem Inter, sans-serif; letter-spacing: .1em; color: var(--c); }
+.scard .opts span { border-color: var(--c); }
+.scard .opts span:first-child { background: var(--c); }
+.js .step .scard { opacity: .35; transform: scale(.97); transition: opacity .4s, transform .4s; }
+.js .step.active .scard { opacity: 1; transform: none; }
+
+/* stage elements that switch on at a step */
+.js .stage [data-from] { opacity: .08; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.js .stage [data-from].on { opacity: 1; transform: none; }
+
+/* chapter 1 stage */
+.pstage { display: grid; gap: 22px; }
+.ptiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.ptile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); }
+.ptile b { display: block; font: 700 3rem/1 "Source Serif 4", serif; }
+.ptile > span { display: block; color: var(--ink-3); font-size: .85rem; margin: 2px 0 10px; }
+.pvs { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; }
+.pvs .vcard p { font-size: .92rem; }
+.pq { font: 700 clamp(2rem, 5vw, 3.4rem)/1.1 "Source Serif 4", serif; text-align: center; color: var(--accent); }
+
+/* chapter 2 stage: anatomy with highlighting */
+.story-anatomy { margin: 0; gap: 8px; }
+.story-anatomy .sec { padding: 10px; gap: 4px; }
+.story-anatomy .sechead { font-size: .82rem; align-items: flex-start; min-height: 2.6em; }
+@media (min-width: 861px) { .stage { padding-bottom: 120px; padding-top: 16px; } }
+.story-anatomy .blk { font-size: .68rem; padding: 3px 7px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: opacity .45s, transform .45s, background-color .45s, box-shadow .45s; }
+.js .story-anatomy .blk { background: var(--bg-alt); border-left-color: var(--line); color: var(--ink-3); }
+.js .story-anatomy .blk.lit { background: color-mix(in srgb, var(--c) 16%, var(--surface)); border-left-color: var(--c); color: var(--ink); transform: translateX(3px); box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 45%, transparent); }
+.js .story-anatomy .blk.dim { opacity: .35; }
+@media (max-width: 1100px) and (min-width: 861px) { .story-anatomy { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* chapter 3 stage: two patient cards */
+.patstage { display: grid; gap: 16px; }
+.pcard { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; box-shadow: var(--shadow); }
+.pchead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.tierpill { font: 700 .75rem Inter, sans-serif; padding: 3px 10px; border-radius: 99px; color: #fff; }
+.tierpill.t-standard { background: var(--std); } .tierpill.t-enhanced { background: var(--enh); } .tierpill.t-high-risk { background: var(--hr); }
+.strip.big i { height: 44px; border-radius: 3px; }
+.js .strip.big i.inc { background: var(--line); opacity: .45; transition: background-color .35s ease calc(var(--i) * 28ms), opacity .35s ease calc(var(--i) * 28ms), transform .35s ease calc(var(--i) * 28ms); }
+.js .pcard.on .strip.big i.inc { background: var(--c); opacity: 1; }
+.strip.big i.extra { transition: outline-color .4s; outline: 2px solid transparent; outline-offset: 2px; }
+.stage[data-step="5"] .strip.big i.extra { outline-color: var(--ink); transform: translateY(-4px); }
+.trig { display: inline-block; background: var(--tok-bg); color: var(--tok-ink); padding: 3px 8px; border-radius: 4px; font-size: .8rem; }
+.stagecap { font-size: .82rem; color: var(--ink-3); text-align: center; margin: 0; }
+.modlist2 { list-style: none; padding: 0; margin: 8px 0 12px; display: grid; gap: 2px; font-size: .84rem; }
+.modlist2 li { border-left: 4px solid var(--c); padding-left: 10px; color: var(--ink-2); }
+.scard .chips span { font-size: .72rem; }
+.cols2 > details { margin-bottom: 8px; }
+
+/* generic reveal */
+.js .reveal { opacity: 0; transform: translateY(36px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+/* highlighted diffs paint in once their card is revealed */
+.js .reveal mark.diff { background-color: transparent; background-image: linear-gradient(var(--mark), var(--mark)); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size .9s ease .35s; }
+.js .reveal.in mark.diff { background-size: 100% 100%; }
+
+/* segment headers stick while their content scrolls under them */
+.story .seg .seghead { position: sticky; top: 46px; z-index: 3; background: var(--bg-alt); padding: 12px 0 8px; margin-bottom: 8px; }
+
+/* entrance animation for the hero */
+.js .shero .eyebrow, .js .shero .ln, .js .shero .sub, .js .shero .ctarow { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
+.js .shero .ln:nth-child(2) { animation-delay: .18s; }
+.js .shero .sub { animation-delay: .36s; }
+.js .shero .ctarow { animation-delay: .5s; }
+@keyframes rise { from { opacity: 0; transform: translateY(28px); } }
+
+/* phones & narrow tablets: stage sticks to the top, step cards scroll over it */
+@media (max-width: 860px) {
+  .scrolly { display: block; }
+  .stage { top: 46px; height: auto; max-height: 62vh; padding: 10px 0; z-index: 1; background: inherit; }
+  .chapter .stage { background: var(--bg); } .chapter.alt .stage { background: var(--bg-alt); }
+  .steps { position: relative; z-index: 2; padding: 30vh 0 20vh; }
+  .step { min-height: 85vh; align-items: flex-end; }
+  .js .step .scard { opacity: .9; }
+  .ptiles { gap: 6px; } .ptile { padding: 10px; } .ptile b { font-size: 2rem; } .ptile .pills, .ptile .spectrum { display: none; }
+  .pvs .vcard { padding: 12px; } .pvs .vcard p { font-size: .8rem; } .vsmark { font-size: 2rem; }
+  .story-anatomy { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+  .story-anatomy .sec { padding: 5px; border-radius: 6px; gap: 2px; }
+  .story-anatomy .sectitle { display: none; }
+  .story-anatomy .sechead { justify-content: center; margin: 0 0 2px; }
+  .story-anatomy .blk { padding: 0; height: 10px; border-left-width: 0; border-radius: 2px; }
+  .js .story-anatomy .blk.lit { background: var(--c); transform: none; box-shadow: none; }
+  .story-anatomy .blk span { display: none; }
+  .pcard { padding: 10px 12px; } .strip.big i { height: 26px; }
+  .facts dd { font-size: 1.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .stage [data-from], .js .step .scard, .js .shero * { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+  .js .reveal mark.diff { background-size: 100% 100%; transition: none; }
+  .scrollcue span { animation: none; }
+}

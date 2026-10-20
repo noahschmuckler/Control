@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modular CS Agreement — Animated</title>
+<meta name="description" content="Animated, scroll-driven walkthrough of a single regional controlled-substance agreement assembled from modular, referenced clause blocks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/story.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="story">
+<nav class="topnav"><div class="navin">
+  <a href="#top" class="brand">CS Agreement Builder</a>
+  <a href="#problem">Problem</a><a href="#blocks">Blocks &amp; controls</a><a href="#patients">Two patients</a><a href="#segments">Segments</a><a href="#core">Core text</a><a href="#governance">Governance</a><a href="#references">References</a>
+  <a href="index.html" class="alt-link">← Classic version</a>
+  <a href="downloads/Controlled-Substance-Agreement-Clause-Library.docx" class="dl" download>Word doc ↓</a>
+</div><div class="progress"><i></i></div></nav>
+<aside class="qr" id="qr" aria-label="QR code linking to this page">
+  <button type="button" class="qr-toggle" aria-expanded="true" aria-controls="qr" title="Shrink QR code">–</button>
+  <a href="https://noahschmuckler.github.io/Control/story.html" class="qr-code"><svg viewBox="0 0 37 37" shape-rendering="crispEdges" aria-hidden="true"><rect width="37" height="37" fill="#fff"/><path d="M2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM5 2h1v1h-1zM6 2h1v1h-1zM7 2h1v1h-1zM8 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM23 2h1v1h-1zM25 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM31 2h1v1h-1zM32 2h1v1h-1zM33 2h1v1h-1zM34 2h1v1h-1zM2 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1zM17 3h1v1h-1zM20 3h1v1h-1zM22 3h1v1h-1zM28 3h1v1h-1zM34 3h1v1h-1zM2 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM13 4h1v1h-1zM16 4h1v1h-1zM22 4h1v1h-1zM23 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM30 4h1v1h-1zM31 4h1v1h-1zM32 4h1v1h-1zM34 4h1v1h-1zM2 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM17 5h1v1h-1zM20 5h1v1h-1zM24 5h1v1h-1zM28 5h1v1h-1zM30 5h1v1h-1zM31 5h1v1h-1zM32 5h1v1h-1zM34 5h1v1h-1zM2 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM13 6h1v1h-1zM14 6h1v1h-1zM15 6h1v1h-1zM16 6h1v1h-1zM17 6h1v1h-1zM18 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM25 6h1v1h-1zM28 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM34 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM21 7h1v1h-1zM28 7h1v1h-1zM34 7h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM33 8h1v1h-1zM34 8h1v1h-1zM10 9h1v1h-1zM14 9h1v1h-1zM18 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM24 9h1v1h-1zM25 9h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM19 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM32 10h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM9 11h1v1h-1zM11 11h1v1h-1zM13 11h1v1h-1zM14 11h1v1h-1zM15 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM25 11h1v1h-1zM28 11h1v1h-1zM29 11h1v1h-1zM31 11h1v1h-1zM32 11h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM13 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM23 12h1v1h-1zM26 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM30 12h1v1h-1zM32 12h1v1h-1zM33 12h1v1h-1zM3 13h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM11 13h1v1h-1zM12 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM26 13h1v1h-1zM27 13h1v1h-1zM28 13h1v1h-1zM30 13h1v1h-1zM31 13h1v1h-1zM32 13h1v1h-1zM33 13h1v1h-1zM34 13h1v1h-1zM3 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM13 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM21 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM27 14h1v1h-1zM29 14h1v1h-1zM30 14h1v1h-1zM31 14h1v1h-1zM33 14h1v1h-1zM34 14h1v1h-1zM3 15h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM10 15h1v1h-1zM13 15h1v1h-1zM17 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM25 15h1v1h-1zM28 15h1v1h-1zM32 15h1v1h-1zM33 15h1v1h-1zM34 15h1v1h-1zM2 16h1v1h-1zM3 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM8 16h1v1h-1zM9 16h1v1h-1zM12 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM23 16h1v1h-1zM26 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM30 16h1v1h-1zM31 16h1v1h-1zM33 16h1v1h-1zM3 17h1v1h-1zM6 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM17 17h1v1h-1zM20 17h1v1h-1zM22 17h1v1h-1zM23 17h1v1h-1zM27 17h1v1h-1zM28 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM32 17h1v1h-1zM3 18h1v1h-1zM5 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM11 18h1v1h-1zM15 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM21 18h1v1h-1zM24 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM30 18h1v1h-1zM34 18h1v1h-1zM4 19h1v1h-1zM11 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM22 19h1v1h-1zM25 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM31 19h1v1h-1zM32 19h1v1h-1zM34 19h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM7 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM13 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM24 20h1v1h-1zM27 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM32 20h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM9 21h1v1h-1zM12 21h1v1h-1zM14 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM21 21h1v1h-1zM23 21h1v1h-1zM26 21h1v1h-1zM29 21h1v1h-1zM30 21h1v1h-1zM31 21h1v1h-1zM32 21h1v1h-1zM33 21h1v1h-1zM34 21h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM7 22h1v1h-1zM8 22h1v1h-1zM12 22h1v1h-1zM15 22h1v1h-1zM20 22h1v1h-1zM21 22h1v1h-1zM24 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM33 22h1v1h-1zM34 22h1v1h-1zM2 23h1v1h-1zM3 23h1v1h-1zM5 23h1v1h-1zM6 23h1v1h-1zM7 23h1v1h-1zM9 23h1v1h-1zM10 23h1v1h-1zM11 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM16 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM25 23h1v1h-1zM28 23h1v1h-1zM31 23h1v1h-1zM34 23h1v1h-1zM2 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM16 24h1v1h-1zM19 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM31 24h1v1h-1zM33 24h1v1h-1zM2 25h1v1h-1zM4 25h1v1h-1zM6 25h1v1h-1zM10 25h1v1h-1zM11 25h1v1h-1zM12 25h1v1h-1zM14 25h1v1h-1zM16 25h1v1h-1zM18 25h1v1h-1zM22 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM25 25h1v1h-1zM26 25h1v1h-1zM28 25h1v1h-1zM31 25h1v1h-1zM32 25h1v1h-1zM33 25h1v1h-1zM34 25h1v1h-1zM2 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM13 26h1v1h-1zM15 26h1v1h-1zM19 26h1v1h-1zM21 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM27 26h1v1h-1zM28 26h1v1h-1zM29 26h1v1h-1zM30 26h1v1h-1zM10 27h1v1h-1zM11 27h1v1h-1zM12 27h1v1h-1zM13 27h1v1h-1zM18 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM30 27h1v1h-1zM32 27h1v1h-1zM34 27h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM7 28h1v1h-1zM8 28h1v1h-1zM11 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM19 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM28 28h1v1h-1zM30 28h1v1h-1zM32 28h1v1h-1zM33 28h1v1h-1zM2 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM13 29h1v1h-1zM14 29h1v1h-1zM16 29h1v1h-1zM17 29h1v1h-1zM18 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM21 29h1v1h-1zM23 29h1v1h-1zM25 29h1v1h-1zM26 29h1v1h-1zM30 29h1v1h-1zM31 29h1v1h-1zM32 29h1v1h-1zM33 29h1v1h-1zM2 30h1v1h-1zM4 30h1v1h-1zM5 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM10 30h1v1h-1zM15 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM24 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM28 30h1v1h-1zM29 30h1v1h-1zM30 30h1v1h-1zM31 30h1v1h-1zM34 30h1v1h-1zM2 31h1v1h-1zM4 31h1v1h-1zM5 31h1v1h-1zM6 31h1v1h-1zM8 31h1v1h-1zM10 31h1v1h-1zM12 31h1v1h-1zM13 31h1v1h-1zM14 31h1v1h-1zM17 31h1v1h-1zM19 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM22 31h1v1h-1zM23 31h1v1h-1zM24 31h1v1h-1zM25 31h1v1h-1zM27 31h1v1h-1zM30 31h1v1h-1zM31 31h1v1h-1zM33 31h1v1h-1zM34 31h1v1h-1zM2 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM18 32h1v1h-1zM20 32h1v1h-1zM23 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM2 33h1v1h-1zM8 33h1v1h-1zM12 33h1v1h-1zM13 33h1v1h-1zM14 33h1v1h-1zM15 33h1v1h-1zM17 33h1v1h-1zM22 33h1v1h-1zM23 33h1v1h-1zM24 33h1v1h-1zM25 33h1v1h-1zM27 33h1v1h-1zM28 33h1v1h-1zM30 33h1v1h-1zM31 33h1v1h-1zM32 33h1v1h-1zM2 34h1v1h-1zM3 34h1v1h-1zM4 34h1v1h-1zM5 34h1v1h-1zM6 34h1v1h-1zM7 34h1v1h-1zM8 34h1v1h-1zM10 34h1v1h-1zM11 34h1v1h-1zM13 34h1v1h-1zM15 34h1v1h-1zM16 34h1v1h-1zM17 34h1v1h-1zM18 34h1v1h-1zM19 34h1v1h-1zM24 34h1v1h-1zM25 34h1v1h-1zM26 34h1v1h-1zM27 34h1v1h-1zM28 34h1v1h-1zM29 34h1v1h-1zM31 34h1v1h-1zM33 34h1v1h-1z" fill="#111"/></svg></a>
+  <span class="qr-label">Scan to follow along</span>
+</aside>
+
+<header class="hero shero" id="top"><div class="wrap">
+  <p class="eyebrow">QI / Controlled Substances Committee</p>
+  <h1><span class="ln">One agreement.</span><span class="ln">Every patient.</span></h1>
+  <p class="sub">A modular controlled-substance prescribing agreement for New York and New Jersey — opioids, benzodiazepines and stimulants — that scales to each patient's actual risk.</p>
+  <div class="ctarow"><a class="cta" href="downloads/Controlled-Substance-Agreement-Clause-Library.docx" download>Download the clause library (Word)</a><a class="cta ghost" href="index.html">View the classic version</a></div>
+  <a class="scrollcue" href="#problem" aria-label="Scroll to begin">Scroll<span>↓</span></a>
+</div></header>
+
+<main>
+<section id="problem" class="chapter"><div class="wrap">
+  <p class="kicker">The problem</p>
+  <div class="scrolly" id="problem-scrolly">
+  <div class="stage" data-step="0"><div class="pstage">
+  <div class="ptiles">
+    <div class="ptile" data-from="1"><b>2</b><span>states</span><div class="pills"><span>NY · I-STOP</span><span>NJ · PMP</span></div></div>
+    <div class="ptile" data-from="2"><b>3</b><span>drug classes</span><div class="pills"><span>Opioids</span><span>Benzos</span><span>Stimulants</span></div></div>
+    <div class="ptile" data-from="3"><b>∞</b><span>risk profiles</span><div class="spectrum"><span>Low</span><i></i><span>High</span></div></div>
+  </div>
+  <div class="pvs">
+    <div class="vcard low" data-from="4"><div class="plabel">Patient A</div><p>82 · back pain · ½ tramadol occasionally · NY</p></div>
+    <div class="vsmark" data-from="5">≠</div>
+    <div class="vcard high" data-from="5"><div class="plabel">Patient B</div><p>44 · pain + anxiety + ADHD · past SUD · early fills · NJ</p></div>
+  </div>
+  <div class="pq" data-from="6">One contract?</div>
+</div></div>
+  <div class="steps"><div class="step" data-step="1"><div class="scard" style="--c:var(--accent)"><span class="sn">01 / 06</span><h3>Two states</h3><p>New York and New Jersey impose different PDMP duties — New York before <em>every</em> Schedule II–IV prescription, New Jersey at the first visit and quarterly.</p></div></div><div class="step" data-step="2"><div class="scard" style="--c:var(--accent)"><span class="sn">02 / 06</span><h3>Three drug classes</h3><p>Opioids, benzodiazepines and ADHD stimulants each carry different risks — and some patients take all three.</p></div></div><div class="step" data-step="3"><div class="scard" style="--c:var(--accent)"><span class="sn">03 / 06</span><h3>A wide risk spectrum</h3><p>Age, SUD history, concurrent controlled substances and PDMP findings vary enormously across a panel.</p></div></div><div class="step" data-step="4"><div class="scard" style="--c:var(--accent)"><span class="sn">04 / 06</span><h3>Patient A</h3><p>82-year-old man, chronic low back pain. Takes half a tramadol a few times a month. Same PCP for 15 years. Clean PDMP. New York.</p></div></div><div class="step" data-step="5"><div class="scard" style="--c:var(--accent)"><span class="sn">05 / 06</span><h3>Patient B</h3><p>44-year-old with chronic pain, severe anxiety and ADHD — on an opioid, a benzodiazepine and a stimulant. Past SUD; PDMP shows early fills and a lost-medication report. New Jersey; drives for work.</p></div></div><div class="step" data-step="6"><div class="scard" style="--c:var(--accent)"><span class="sn">06 / 06</span><h3>The question</h3><p>How can one regional contract fit two states, three drug classes, and both of these patients? A single one-size document is too heavy for Patient A or too light for Patient B. Separate documents for every combination are unmaintainable.</p></div></div></div>
+</div>
+</div></section>
+
+<section id="blocks" class="chapter alt"><div class="wrap">
+  <p class="kicker">The answer</p>
+  <h2 class="reveal">One document, assembled from referenced blocks</h2>
+  <div class="scrolly" id="blocks-scrolly">
+  <div class="stage" data-step="0"><div class="anatomy story-anatomy">
+<div class="sec">
+  <div class="sechead"><span class="secnum">1</span><span class="sectitle">Scope and Parties</span></div>
+  <div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Agreement header &amp; clinical-discretion statement</span></div><div class="blk mod" data-tags="indication" style="--c:#0f7f7a"><span>Indication — established</span></div><div class="blk mod" data-tags="indication" style="--c:#0f7f7a"><span>Indication — inherited / presumptive</span></div><div class="blk mod" data-tags="indication" style="--c:#0f7f7a"><span>Indication — none, bridge supply</span></div>
+</div><div class="sec">
+  <div class="sechead"><span class="secnum">2</span><span class="sectitle">Patient Obligations</span></div>
+  <div class="blk" data-tags="fixed token" style="--c:var(--fixed)"><span>Single prescriber</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Single pharmacy</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Use as prescribed</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>No sharing or transfer</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Safe storage</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Disclosure of other substances</span></div><div class="blk mod" data-tags="state" style="--c:#2f6fb3"><span>PDMP consent — New York (I-STOP)</span></div><div class="blk mod" data-tags="state" style="--c:#2f6fb3"><span>PDMP consent — New Jersey</span></div><div class="blk mod" data-tags="tier" style="--c:#c2410c"><span>Drug screening — every 6–12 months</span></div><div class="blk mod" data-tags="tier" style="--c:#c2410c"><span>Drug screening — about every 3 months</span></div><div class="blk mod" data-tags="tier" style="--c:#c2410c"><span>Drug screening — every visit</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Refill timing</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Lost or stolen medication</span></div><div class="blk mod" data-tags="sud" style="--c:#a21caf"><span>Extended-release / prodrug formulation</span></div><div class="blk mod" data-tags="tier" style="--c:#c2410c"><span>Pill counts</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Treatment goals (function)</span></div>
+</div><div class="sec">
+  <div class="sechead"><span class="secnum">3</span><span class="sectitle">Provider Obligations</span></div>
+  <div class="blk mod" data-tags="state" style="--c:#2f6fb3"><span>Provider PDMP review — New York</span></div><div class="blk mod" data-tags="state" style="--c:#2f6fb3"><span>Provider PDMP review — New Jersey</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Functional assessment each visit</span></div><div class="blk mod" data-tags="naloxone" style="--c:#0369a1"><span>Naloxone offer &amp; education</span></div><div class="blk mod" data-tags="tier" style="--c:#c2410c"><span>Specialist involvement</span></div><div class="blk mod" data-tags="tier" style="--c:#c2410c"><span>Reassessment — at least annually</span></div><div class="blk mod" data-tags="tier" style="--c:#c2410c"><span>Reassessment — at least every 6 months</span></div><div class="blk mod" data-tags="tier" style="--c:#c2410c"><span>Reassessment — every visit / ≤3 months</span></div>
+</div><div class="sec">
+  <div class="sechead"><span class="secnum">4</span><span class="sectitle">Monitoring and Graduated Response</span></div>
+  <div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Monitoring is a safety tool, not punishment</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Graduated response to concerns</span></div><div class="blk mod" data-tags="driving token" style="--c:#4d7c0f"><span>Driving &amp; safety-sensitive work</span></div><div class="blk mod" data-tags="age" style="--c:#b45309"><span>Age-related risks (65+)</span></div><div class="blk mod" data-tags="combo" style="--c:#b91c1c"><span>Opioid + benzodiazepine combination</span></div><div class="blk mod" data-tags="sud" style="--c:#a21caf"><span>Substance-use history</span></div>
+</div><div class="sec">
+  <div class="sechead"><span class="secnum">5</span><span class="sectitle">Acknowledgment and Signatures</span></div>
+  <div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Acknowledgment</span></div><div class="blk" data-tags="fixed" style="--c:var(--fixed)"><span>Signatures &amp; version stamp</span></div>
+</div>
+</div></div>
+  <div class="steps"><div class="step" data-step="1" data-hl="none"><div class="scard" style="--c:var(--accent)"><span class="sn">01 / 13</span><h3>Five sections, every time</h3><p>Every agreement uses the same five sections, drawn from one library of 36 referenced text blocks.</p></div></div><div class="step" data-step="2" data-hl="fixed"><div class="scard" style="--c:var(--accent)"><span class="sn">02 / 13</span><h3>15 blocks every patient signs</h3><p>Scope and clinical discretion, the core patient obligations, functional assessment, non-punitive monitoring and graduated response, and the acknowledgment.</p></div></div><div class="step" data-step="3" data-hl="state"><div class="scard" style="--c:#2f6fb3"><span class="sn">03 / 13</span><h3>State</h3><div class="opts"><span>New York</span><span>New Jersey</span></div><p>Swaps in the correct state PDMP statute — patient consent and provider duty.</p><p class="small"><b>Blocks:</b> PDMP consent — New York (I-STOP) · PDMP consent — New Jersey · Provider PDMP review — New York · Provider PDMP review — New Jersey</p></div></div><div class="step" data-step="4" data-hl="indication"><div class="scard" style="--c:#0f7f7a"><span class="sn">04 / 13</span><h3>Indication status</h3><div class="opts"><span>Established</span><span>Inherited / presumptive</span><span>None — pending assessment</span></div><p>Chooses one of three indication statements, from a documented diagnosis to a bridge supply.</p><p class="small"><b>Blocks:</b> Indication — established · Indication — inherited / presumptive · Indication — none, bridge supply</p></div></div><div class="step" data-step="5" data-hl="tier"><div class="scard" style="--c:#c2410c"><span class="sn">05 / 13</span><h3>Risk tier</h3><div class="opts"><span>Standard</span><span>Enhanced</span><span>High-risk</span></div><p>Auto-suggested from the risk inputs, always confirmable or overridable. Sets drug-screen frequency, pill counts, reassessment cadence, specialist involvement and review date.</p><p class="small"><b>Blocks:</b> Drug screening — every 6–12 months · Drug screening — about every 3 months · Drug screening — every visit · Pill counts · Reassessment — at least annually · Reassessment — at least every 6 months · Reassessment — every visit / ≤3 months · Specialist involvement</p></div></div><div class="step" data-step="6" data-hl="sud"><div class="scard" style="--c:#a21caf"><span class="sn">06 / 13</span><h3>SUD history</h3><div class="opts"><span>None</span><span>Past</span><span>Active</span></div><p>Past or active SUD adds formulation and SUD-aware language, and raises the suggested tier unless a specialist is involved.</p><p class="small"><b>Blocks:</b> Extended-release / prodrug formulation · Substance-use history</p></div></div><div class="step" data-step="7" data-hl="combo"><div class="scard" style="--c:#b91c1c"><span class="sn">07 / 13</span><h3>Opioid + benzodiazepine</h3><div class="opts"><span>Off</span><span>On</span></div><p>Adds the combination-risk acknowledgment, forces naloxone on, and suggests High-risk.</p><p class="small"><b>Blocks:</b> Opioid + benzodiazepine combination</p></div></div><div class="step" data-step="8" data-hl="age"><div class="scard" style="--c:#b45309"><span class="sn">08 / 13</span><h3>Age ≥ 65</h3><div class="opts"><span>Off</span><span>On</span></div><p>Adds Beers-criteria counseling on falls, fractures and cognition; suggests at least Enhanced.</p><p class="small"><b>Blocks:</b> Age-related risks (65+)</p></div></div><div class="step" data-step="9" data-hl="driving"><div class="scard" style="--c:#4d7c0f"><span class="sn">09 / 13</span><h3>Driving / safety-sensitive</h3><div class="opts"><span>Off</span><span>On</span></div><p>Adds documented counseling on impairment and occupational reporting obligations.</p><p class="small"><b>Blocks:</b> Driving &amp; safety-sensitive work</p></div></div><div class="step" data-step="10" data-hl="naloxone"><div class="scard" style="--c:#0369a1"><span class="sn">10 / 13</span><h3>Naloxone</h3><div class="opts"><span>Not indicated</span><span>Offered</span></div><p>Auto-on for opioid + benzo, or an opioid-involving class with a dose or SUD flag. Overridable.</p><p class="small"><b>Blocks:</b> Naloxone offer &amp; education</p></div></div><div class="step" data-step="11" data-hl="token"><div class="scard" style="--c:#6a4fb3"><span class="sn">11 / 13</span><h3>Substance class</h3><div class="opts"><span>Opioid</span><span>Benzodiazepine</span><span>Stimulant</span><span>Multi-class</span></div><p>Adds no block of its own. It fills the <span class="tok">[MEDICATION CLASS]</span> wording in the highlighted blocks, sets the SmartPhrase code (<code>OPT</code> · <code>BNZ</code> · <code>STM</code> · <code>MULTI</code>), and decides whether naloxone logic applies.</p></div></div><div class="step" data-step="12" data-hl="tier"><div class="scard" style="--c:#64748b"><span class="sn">12 / 13</span><h3>Other risk inputs</h3><div class="opts"><span>Concurrent CS</span><span>Dose ≥ threshold</span><span>Early-fill history</span><span>Prior lost meds</span><span>Specialist involved</span></div><p>Add no text of their own — they drive the risk-tier suggestion, which then drives the tier blocks.</p></div></div><div class="step" data-step="13" data-hl="all"><div class="scard" style="--c:var(--accent)"><span class="sn">13 / 13</span><h3>21 modular blocks, 576 combinations</h3><p>The prescriber sets 10 controls; the builder assembles one agreement — and a SmartPhrase name such as <code>.CSAGREE-OPT-NY-STD</code>.</p></div></div></div>
+</div>
+  <div class="reveal"><h4 class="subh">How the risk tier is suggested</h4><div class="logic">
+  <div class="lcol hr"><h4>High-risk if any</h4><ul>
+    <li>Active SUD without specialist involvement</li><li>Opioid + benzodiazepine</li>
+    <li>Cross-class concurrent controlled substances</li><li>Prior lost-medication report</li>
+    <li>No indication at dose ≥ threshold</li></ul></div>
+  <div class="lcol en"><h4>otherwise Enhanced if any</h4><ul>
+    <li>Past or active SUD without specialist</li><li>Early-fill history</li><li>Dose ≥ threshold</li>
+    <li>Age ≥ 65</li><li>Inherited / presumptive indication</li><li>Same-class concurrent CS</li></ul></div>
+  <div class="lcol st"><h4>otherwise Standard</h4><ul><li>No elevated-risk inputs set</li></ul></div>
+</div>
+<p class="note">The tier is a <b>suggestion with its rationale shown</b>. The prescriber confirms or overrides it; overrides are flagged. Next review: Standard 12 months · Enhanced 6 months · High-risk 3 months.</p>
+<p class="note"><b>Naloxone auto-logic:</b> on for any opioid + benzodiazepine combination, or for an opioid-involving class (opioid, multi-class) with dose ≥ threshold or any SUD history. Overridable.</p></div>
+</div></section>
+
+<section id="patients" class="chapter"><div class="wrap">
+  <p class="kicker">Same builder, two patients</p>
+  <h2 class="reveal">The agreement each patient actually signs</h2>
+  <div class="scrolly" id="patients-scrolly">
+  <div class="stage" data-step="0"><div class="patstage"><div class="pcard" data-from="1">
+  <div class="pchead"><span class="plabel">Patient A</span><span class="tierpill t-enhanced">Enhanced</span></div>
+  <dl class="facts">
+    <div><dt>Blocks</dt><dd><span data-count="22">0</span><small> / 36</small></dd></div>
+    <div><dt>Words</dt><dd><span data-count="1038">0</span></dd></div>
+    <div><dt>Review</dt><dd><span data-count="6">0</span><small> mo</small></dd></div>
+    <div><dt>Naloxone</dt><dd>No</dd></div>
+  </dl>
+  <div class="strip big"><div class="sgrp" style="flex:4"><i class="inc" style="--c:var(--fixed);--i:0" title="Agreement header &amp; clinical-discretion statement"></i><i class="inc" style="--c:#0f7f7a;--i:1" title="Indication — established"></i><i class="" style="--c:#0f7f7a;--i:2" title="Indication — inherited / presumptive"></i><i class="" style="--c:#0f7f7a;--i:3" title="Indication — none, bridge supply"></i></div><div class="sgrp" style="flex:16"><i class="inc" style="--c:var(--fixed);--i:4" title="Single prescriber"></i><i class="inc" style="--c:var(--fixed);--i:5" title="Single pharmacy"></i><i class="inc" style="--c:var(--fixed);--i:6" title="Use as prescribed"></i><i class="inc" style="--c:var(--fixed);--i:7" title="No sharing or transfer"></i><i class="inc" style="--c:var(--fixed);--i:8" title="Safe storage"></i><i class="inc" style="--c:var(--fixed);--i:9" title="Disclosure of other substances"></i><i class="inc" style="--c:#2f6fb3;--i:10" title="PDMP consent — New York (I-STOP)"></i><i class="" style="--c:#2f6fb3;--i:11" title="PDMP consent — New Jersey"></i><i class="" style="--c:#c2410c;--i:12" title="Drug screening — every 6–12 months"></i><i class="inc" style="--c:#c2410c;--i:13" title="Drug screening — about every 3 months"></i><i class="" style="--c:#c2410c;--i:14" title="Drug screening — every visit"></i><i class="inc" style="--c:var(--fixed);--i:15" title="Refill timing"></i><i class="inc" style="--c:var(--fixed);--i:16" title="Lost or stolen medication"></i><i class="" style="--c:#a21caf;--i:17" title="Extended-release / prodrug formulation"></i><i class="inc" style="--c:#c2410c;--i:18" title="Pill counts"></i><i class="inc" style="--c:var(--fixed);--i:19" title="Treatment goals (function)"></i></div><div class="sgrp" style="flex:8"><i class="inc" style="--c:#2f6fb3;--i:20" title="Provider PDMP review — New York"></i><i class="" style="--c:#2f6fb3;--i:21" title="Provider PDMP review — New Jersey"></i><i class="inc" style="--c:var(--fixed);--i:22" title="Functional assessment each visit"></i><i class="" style="--c:#0369a1;--i:23" title="Naloxone offer &amp; education"></i><i class="" style="--c:#c2410c;--i:24" title="Specialist involvement"></i><i class="" style="--c:#c2410c;--i:25" title="Reassessment — at least annually"></i><i class="inc" style="--c:#c2410c;--i:26" title="Reassessment — at least every 6 months"></i><i class="" style="--c:#c2410c;--i:27" title="Reassessment — every visit / ≤3 months"></i></div><div class="sgrp" style="flex:6"><i class="inc" style="--c:var(--fixed);--i:28" title="Monitoring is a safety tool, not punishment"></i><i class="inc" style="--c:var(--fixed);--i:29" title="Graduated response to concerns"></i><i class="" style="--c:#4d7c0f;--i:30" title="Driving &amp; safety-sensitive work"></i><i class="inc" style="--c:#b45309;--i:31" title="Age-related risks (65+)"></i><i class="" style="--c:#b91c1c;--i:32" title="Opioid + benzodiazepine combination"></i><i class="" style="--c:#a21caf;--i:33" title="Substance-use history"></i></div><div class="sgrp" style="flex:2"><i class="inc" style="--c:var(--fixed);--i:34" title="Acknowledgment"></i><i class="inc" style="--c:var(--fixed);--i:35" title="Signatures &amp; version stamp"></i></div></div>
+  <code class="trig">.CSAGREE-OPT-NY-ENH</code>
+</div><div class="pcard" data-from="3">
+  <div class="pchead"><span class="plabel">Patient B</span><span class="tierpill t-high-risk">High-risk</span></div>
+  <dl class="facts">
+    <div><dt>Blocks</dt><dd><span data-count="27">0</span><small> / 36</small></dd></div>
+    <div><dt>Words</dt><dd><span data-count="1258">0</span></dd></div>
+    <div><dt>Review</dt><dd><span data-count="3">0</span><small> mo</small></dd></div>
+    <div><dt>Naloxone</dt><dd>Yes</dd></div>
+  </dl>
+  <div class="strip big"><div class="sgrp" style="flex:4"><i class="inc" style="--c:var(--fixed);--i:0" title="Agreement header &amp; clinical-discretion statement"></i><i class="inc" style="--c:#0f7f7a;--i:1" title="Indication — established"></i><i class="" style="--c:#0f7f7a;--i:2" title="Indication — inherited / presumptive"></i><i class="" style="--c:#0f7f7a;--i:3" title="Indication — none, bridge supply"></i></div><div class="sgrp" style="flex:16"><i class="inc" style="--c:var(--fixed);--i:4" title="Single prescriber"></i><i class="inc" style="--c:var(--fixed);--i:5" title="Single pharmacy"></i><i class="inc" style="--c:var(--fixed);--i:6" title="Use as prescribed"></i><i class="inc" style="--c:var(--fixed);--i:7" title="No sharing or transfer"></i><i class="inc" style="--c:var(--fixed);--i:8" title="Safe storage"></i><i class="inc" style="--c:var(--fixed);--i:9" title="Disclosure of other substances"></i><i class="" style="--c:#2f6fb3;--i:10" title="PDMP consent — New York (I-STOP)"></i><i class="inc extra" style="--c:#2f6fb3;--i:11" title="PDMP consent — New Jersey"></i><i class="" style="--c:#c2410c;--i:12" title="Drug screening — every 6–12 months"></i><i class="" style="--c:#c2410c;--i:13" title="Drug screening — about every 3 months"></i><i class="inc extra" style="--c:#c2410c;--i:14" title="Drug screening — every visit"></i><i class="inc" style="--c:var(--fixed);--i:15" title="Refill timing"></i><i class="inc" style="--c:var(--fixed);--i:16" title="Lost or stolen medication"></i><i class="inc extra" style="--c:#a21caf;--i:17" title="Extended-release / prodrug formulation"></i><i class="inc" style="--c:#c2410c;--i:18" title="Pill counts"></i><i class="inc" style="--c:var(--fixed);--i:19" title="Treatment goals (function)"></i></div><div class="sgrp" style="flex:8"><i class="" style="--c:#2f6fb3;--i:20" title="Provider PDMP review — New York"></i><i class="inc extra" style="--c:#2f6fb3;--i:21" title="Provider PDMP review — New Jersey"></i><i class="inc" style="--c:var(--fixed);--i:22" title="Functional assessment each visit"></i><i class="inc extra" style="--c:#0369a1;--i:23" title="Naloxone offer &amp; education"></i><i class="inc extra" style="--c:#c2410c;--i:24" title="Specialist involvement"></i><i class="" style="--c:#c2410c;--i:25" title="Reassessment — at least annually"></i><i class="" style="--c:#c2410c;--i:26" title="Reassessment — at least every 6 months"></i><i class="inc extra" style="--c:#c2410c;--i:27" title="Reassessment — every visit / ≤3 months"></i></div><div class="sgrp" style="flex:6"><i class="inc" style="--c:var(--fixed);--i:28" title="Monitoring is a safety tool, not punishment"></i><i class="inc" style="--c:var(--fixed);--i:29" title="Graduated response to concerns"></i><i class="inc extra" style="--c:#4d7c0f;--i:30" title="Driving &amp; safety-sensitive work"></i><i class="" style="--c:#b45309;--i:31" title="Age-related risks (65+)"></i><i class="inc extra" style="--c:#b91c1c;--i:32" title="Opioid + benzodiazepine combination"></i><i class="inc extra" style="--c:#a21caf;--i:33" title="Substance-use history"></i></div><div class="sgrp" style="flex:2"><i class="inc" style="--c:var(--fixed);--i:34" title="Acknowledgment"></i><i class="inc" style="--c:var(--fixed);--i:35" title="Signatures &amp; version stamp"></i></div></div>
+  <code class="trig">.CSAGREE-MULTI-NJ-HR</code>
+</div><p class="stagecap" data-from="5">Outlined blocks: what Patient B's agreement adds</p></div></div>
+  <div class="steps"><div class="step" data-step="1"><div class="scard" style="--c:var(--accent)"><span class="sn">01 / 05</span><h3>Patient A</h3><p>82-year-old man, chronic low back pain. Takes half a tramadol a few times a month. Same PCP for 15 years. Clean PDMP. New York.</p><div class="chips"><span>Opioid</span><span>New York</span><span>Established indication</span><span>Age ≥ 65</span></div></div></div><div class="step" data-step="2"><div class="scard" style="--c:var(--accent)"><span class="sn">02 / 05</span><h3>Patient A → Enhanced</h3><p>Suggested because: age ≥ 65.</p><ul class="modlist2"><li style="--c:#0f7f7a">Indication — established</li><li style="--c:#2f6fb3">PDMP consent — New York (I-STOP)</li><li style="--c:#c2410c">Drug screening — about every 3 months</li><li style="--c:#c2410c">Pill counts</li><li style="--c:#2f6fb3">Provider PDMP review — New York</li><li style="--c:#c2410c">Reassessment — at least every 6 months</li><li style="--c:#b45309">Age-related risks (65+)</li></ul><p class="small">The prescriber can override to Standard for occasional low-dose tramadol — screening every 6–12 months, no pill counts, 12-month review. The override is flagged.</p></div></div><div class="step" data-step="3"><div class="scard" style="--c:var(--accent)"><span class="sn">03 / 05</span><h3>Patient B</h3><p>44-year-old with chronic pain, severe anxiety and ADHD — on an opioid, a benzodiazepine and a stimulant. Past SUD; PDMP shows early fills and a lost-medication report. New Jersey; drives for work.</p><div class="chips"><span>Multi-class</span><span>New Jersey</span><span>Established indication</span><span>Past SUD</span><span>Cross-class CS</span><span>Opioid + benzo</span><span>Early fills</span><span>Prior lost meds</span><span>Driving</span></div></div></div><div class="step" data-step="4"><div class="scard" style="--c:var(--accent)"><span class="sn">04 / 05</span><h3>Patient B → High-risk</h3><p>Suggested because: concurrent opioid + benzodiazepine; cross-class concurrent controlled substances; prior lost-medication report.</p><ul class="modlist2"><li style="--c:#0f7f7a">Indication — established</li><li style="--c:#2f6fb3">PDMP consent — New Jersey</li><li style="--c:#c2410c">Drug screening — every visit</li><li style="--c:#a21caf">Extended-release / prodrug formulation</li><li style="--c:#c2410c">Pill counts</li><li style="--c:#2f6fb3">Provider PDMP review — New Jersey</li><li style="--c:#0369a1">Naloxone offer &amp; education</li><li style="--c:#c2410c">Specialist involvement</li><li style="--c:#c2410c">Reassessment — every visit / ≤3 months</li><li style="--c:#4d7c0f">Driving &amp; safety-sensitive work</li><li style="--c:#b91c1c">Opioid + benzodiazepine combination</li><li style="--c:#a21caf">Substance-use history</li></ul></div></div><div class="step" data-step="5"><div class="scard" style="--c:var(--accent)"><span class="sn">05 / 05</span><h3>Same builder, different agreements</h3><p>Patient A signs 22 blocks; Patient B signs 27. B's agreement adds visit-level screening, specialist involvement, naloxone, SUD-aware formulation language, combination-risk and driving counseling — and a 3-month review instead of 6.</p></div></div></div>
+</div>
+  <div class="cols2"><details class="reveal"><summary>Read Patient A's assembled agreement</summary><div class="fulltext"><h5>SECTION 1 — SCOPE AND PARTIES</h5><div class="pc" style="--c:transparent"><p>CONTROLLED SUBSTANCE PRESCRIBING AGREEMENT</p><p>This agreement is entered into between <span class="tok">[PROVIDER NAME]</span>, <span class="tok">[TITLE]</span>, of Crystal Run Healthcare, and <span class="tok">[PATIENT NAME]</span> (Date of Birth: <span class="tok">[DOB]</span>) on <span class="tok">[DATE]</span>. This agreement covers the following medication(s): <span class="tok">[MEDICATION, DOSE, FREQUENCY]</span>.</p><p>This agreement is a clinical document establishing shared expectations for the prescribing relationship. It is advisory in nature; experienced providers retain clinical discretion. Nothing in this agreement limits the provider's ability to exercise independent clinical judgment.</p></div><div class="pc" style="--c:#0f7f7a"><p>Indication: This agreement covers <span class="tok">[MEDICATION]</span> prescribed for the management of <span class="tok">[DIAGNOSED CONDITION]</span>, documented in the medical record.</p></div><h5>SECTION 2 — PATIENT OBLIGATIONS</h5><div class="pc" style="--c:transparent"><p>Single prescriber: I agree to obtain opioid prescriptions from a single prescriber — the provider named in this agreement. I will not seek prescriptions for opioid from any other provider without the knowledge and documented coordination of my prescribing provider.</p></div><div class="pc" style="--c:transparent"><p>Single pharmacy: I agree to fill all prescriptions for <span class="tok">[MEDICATION]</span> at a single pharmacy: <span class="tok">[PHARMACY NAME AND LOCATION]</span>. I will notify my provider in advance if I need to use a different pharmacy due to supply issues, travel, or insurance requirements, and will document the reason.</p></div><div class="pc" style="--c:transparent"><p>Use as prescribed: I agree to take <span class="tok">[MEDICATION]</span> only as prescribed — at the prescribed dose, frequency, and for the prescribed indication. I will not adjust my dose without discussing it with my provider first.</p></div><div class="pc" style="--c:transparent"><p>No sharing or transfer: I understand that sharing, selling, or otherwise transferring my controlled substance prescription to another person is a federal felony under 21 USC §841. I agree not to do so.</p></div><div class="pc" style="--c:transparent"><p>Safe storage: I agree to store <span class="tok">[MEDICATION]</span> in a secure location, out of reach of children and visitors. I understand that proper storage is my responsibility.</p></div><div class="pc" style="--c:transparent"><p>Disclosure: I agree to inform my provider of all other medications, supplements, and substances I am using, including over-the-counter medications, alcohol, cannabis, and any controlled substances prescribed by other providers.</p></div><div class="pc" style="--c:#2f6fb3"><p>Prescription monitoring: I understand that my provider is required by New York Public Health Law §3343-a (I-STOP) to review the New York State Prescription Monitoring Program registry before every prescription of this controlled substance. I consent to this review.</p></div><div class="pc" style="--c:#c2410c"><p>Drug screening: I agree to provide urine samples for drug screening when requested by my provider, at a frequency of approximately every 3 months or as clinically indicated. I understand that the purpose of this screening is to support safe prescribing, not to punish me.</p></div><div class="pc" style="--c:transparent"><p>Refill timing: I understand that my medication will be prescribed on a set schedule. I agree not to request early refills except in advance for documented travel or documented supply-chain issues. I understand that federal law (21 CFR §1306.12) permits multiple sequential prescriptions with earliest fill dates for up to 90 days of supply when clinically appropriate.</p></div><div class="pc" style="--c:transparent"><p>Lost or stolen medication: I understand that Crystal Run Healthcare's policy is not to replace lost or stolen controlled substance prescriptions. I understand that this is an institutional policy; federal law does not categorically prohibit replacement. If my medication is lost or stolen, I agree to report the loss to my provider and, if stolen, to file a police report.</p></div><div class="pc" style="--c:#c2410c"><p>Pill counts: I agree to bring my medication to any appointment when requested for a pill count. I understand that pill counts may be requested without advance notice.</p></div><div class="pc" style="--c:transparent"><p>Treatment goals: I understand that the goal of this medication is to support my daily function — my ability to work, maintain relationships, and carry out daily activities — and to manage <span class="tok">[CONDITION]</span>. I understand that improvement in function, even if pain or symptoms are not fully eliminated, is a meaningful treatment outcome. I agree to discuss my functional status at each visit.</p></div><h5>SECTION 3 — PROVIDER OBLIGATIONS</h5><div class="pc" style="--c:#2f6fb3"><p>PDMP review: My provider will review the New York State Prescription Monitoring Program registry before every prescription of this controlled substance, as required by NY Public Health Law §3343-a.</p></div><div class="pc" style="--c:transparent"><p>Functional assessment: My provider will assess my functional status — including my ability to work, maintain relationships, carry out daily activities, and drive safely — at each visit.</p></div><div class="pc" style="--c:#c2410c"><p>Reassessment: My provider will reassess the benefit and risk of continuing this medication at least every 6 months, or sooner if concerns emerge.</p></div><h5>SECTION 4 — MONITORING AND GRADUATED RESPONSE</h5><div class="pc" style="--c:transparent"><p>Monitoring purpose: The monitoring activities described in this agreement — PDMP review, urine drug screening, pill counts, functional assessment — are safety tools, not punitive measures. Unexpected monitoring findings will be discussed with me directly before any clinical decisions are made. My provider will apply clinical judgment to each finding and will not dismiss me from care on the basis of a single monitoring result.</p></div><div class="pc" style="--c:transparent"><p>Response to concerns: If a monitoring finding, pattern of requests, or clinical concern arises, my provider will follow a graduated approach:</p><p>(1) First concern: Direct conversation, documentation, and reassessment of the monitoring plan. No automatic change to the prescription.</p><p>(2) Repeated or escalating concern: Formal review within the controlled substance agreement framework, urine drug screen if not already done, PDMP review, and discussion of whether the current management plan remains appropriate. Specialist input may be sought.</p><p>(3) Significant or unresolved concern: Specialist consultation before continuing. Continuation may not be appropriate without specialist co-management. If I am not able to continue in this practice, my provider will ensure I receive a referral or bridge plan — I will not be abruptly abandoned.</p></div><div class="pc" style="--c:#b45309"><p>Age-related risks: My provider has discussed with me that benzodiazepines and sedating medications carry increased risks of falls, fractures, and cognitive effects in adults over 65, as noted in the American Geriatrics Society Beers Criteria. I understand these risks and have discussed them with my provider. My provider and I have agreed on the clinical rationale for continuing this medication at this time, and will reassess annually or sooner if my functional status changes.</p></div><h5>SECTION 5 — ACKNOWLEDGMENT AND SIGNATURES</h5><div class="pc" style="--c:transparent"><p>I have read this agreement and have had the opportunity to ask questions. I understand its contents and agree to its terms. I understand that this agreement may be updated at any time with my participation, and that I will be given a copy of any updated agreement to review before signing.</p><p>I understand that this agreement is a clinical document, not a legal contract, and that my provider retains clinical discretion at all times.</p></div><div class="pc" style="--c:transparent"><p>Patient signature: _________________________ Date: _____________</p><p>Printed name: _________________________</p><p>Provider signature: _________________________ Date: _____________</p><p>Provider name and title: _________________________</p><p>Next scheduled review: _________________________</p><p>Contract version: v1.0.0 (2026-05-25) | Crystal Run Healthcare / Optum NY/NJ</p></div></div></details><details class="reveal"><summary>Read Patient B's assembled agreement</summary><div class="fulltext"><h5>SECTION 1 — SCOPE AND PARTIES</h5><div class="pc" style="--c:transparent"><p>CONTROLLED SUBSTANCE PRESCRIBING AGREEMENT</p><p>This agreement is entered into between <span class="tok">[PROVIDER NAME]</span>, <span class="tok">[TITLE]</span>, of Crystal Run Healthcare, and <span class="tok">[PATIENT NAME]</span> (Date of Birth: <span class="tok">[DOB]</span>) on <span class="tok">[DATE]</span>. This agreement covers the following medication(s): <span class="tok">[MEDICATION, DOSE, FREQUENCY]</span>.</p><p>This agreement is a clinical document establishing shared expectations for the prescribing relationship. It is advisory in nature; experienced providers retain clinical discretion. Nothing in this agreement limits the provider's ability to exercise independent clinical judgment.</p></div><div class="pc" style="--c:#0f7f7a"><p>Indication: This agreement covers <span class="tok">[MEDICATION]</span> prescribed for the management of <span class="tok">[DIAGNOSED CONDITION]</span>, documented in the medical record.</p></div><h5>SECTION 2 — PATIENT OBLIGATIONS</h5><div class="pc" style="--c:transparent"><p>Single prescriber: I agree to obtain controlled substance prescriptions from a single prescriber — the provider named in this agreement. I will not seek prescriptions for controlled substance from any other provider without the knowledge and documented coordination of my prescribing provider.</p></div><div class="pc" style="--c:transparent"><p>Single pharmacy: I agree to fill all prescriptions for <span class="tok">[MEDICATION]</span> at a single pharmacy: <span class="tok">[PHARMACY NAME AND LOCATION]</span>. I will notify my provider in advance if I need to use a different pharmacy due to supply issues, travel, or insurance requirements, and will document the reason.</p></div><div class="pc" style="--c:transparent"><p>Use as prescribed: I agree to take <span class="tok">[MEDICATION]</span> only as prescribed — at the prescribed dose, frequency, and for the prescribed indication. I will not adjust my dose without discussing it with my provider first.</p></div><div class="pc" style="--c:transparent"><p>No sharing or transfer: I understand that sharing, selling, or otherwise transferring my controlled substance prescription to another person is a federal felony under 21 USC §841. I agree not to do so.</p></div><div class="pc" style="--c:transparent"><p>Safe storage: I agree to store <span class="tok">[MEDICATION]</span> in a secure location, out of reach of children and visitors. I understand that proper storage is my responsibility.</p></div><div class="pc" style="--c:transparent"><p>Disclosure: I agree to inform my provider of all other medications, supplements, and substances I am using, including over-the-counter medications, alcohol, cannabis, and any controlled substances prescribed by other providers.</p></div><div class="pc" style="--c:#2f6fb3"><p>Prescription monitoring: I understand that my provider is required by NJSA 45:1-46.1 to review the New Jersey Prescription Monitoring Program at my first visit and quarterly during ongoing therapy. I consent to this review.</p></div><div class="pc" style="--c:#c2410c"><p>Drug screening: I agree to provide urine samples for drug screening at every visit or as requested by my provider. I understand that the purpose of this screening is to support safe prescribing and my safety, not to punish me.</p></div><div class="pc" style="--c:transparent"><p>Refill timing: I understand that my medication will be prescribed on a set schedule. I agree not to request early refills except in advance for documented travel or documented supply-chain issues. I understand that federal law (21 CFR §1306.12) permits multiple sequential prescriptions with earliest fill dates for up to 90 days of supply when clinically appropriate.</p></div><div class="pc" style="--c:transparent"><p>Lost or stolen medication: I understand that Crystal Run Healthcare's policy is not to replace lost or stolen controlled substance prescriptions. I understand that this is an institutional policy; federal law does not categorically prohibit replacement. If my medication is lost or stolen, I agree to report the loss to my provider and, if stolen, to file a police report.</p></div><div class="pc" style="--c:#a21caf"><p>Formulation: I understand that my provider has prescribed an extended-release or prodrug formulation of <span class="tok">[MEDICATION]</span> because of my history of substance use. I agree not to request a change to an immediate-release formulation without discussing this with my provider.</p></div><div class="pc" style="--c:#c2410c"><p>Pill counts: I agree to bring my medication to any appointment when requested for a pill count. I understand that pill counts may be requested without advance notice.</p></div><div class="pc" style="--c:transparent"><p>Treatment goals: I understand that the goal of this medication is to support my daily function — my ability to work, maintain relationships, and carry out daily activities — and to manage <span class="tok">[CONDITION]</span>. I understand that improvement in function, even if pain or symptoms are not fully eliminated, is a meaningful treatment outcome. I agree to discuss my functional status at each visit.</p></div><h5>SECTION 3 — PROVIDER OBLIGATIONS</h5><div class="pc" style="--c:#2f6fb3"><p>PDMP review: My provider will review the New Jersey Prescription Monitoring Program at my first visit and quarterly during ongoing therapy, as required by NJSA 45:1-46.1.</p></div><div class="pc" style="--c:transparent"><p>Functional assessment: My provider will assess my functional status — including my ability to work, maintain relationships, carry out daily activities, and drive safely — at each visit.</p></div><div class="pc" style="--c:#0369a1"><p>Naloxone: My provider will offer to prescribe naloxone (overdose reversal medication) and will provide education on its use. I understand why naloxone has been recommended in my situation.</p></div><div class="pc" style="--c:#c2410c"><p>Specialist involvement: My provider will arrange consultation with a specialist — addiction medicine, addiction psychiatry, pain management, or medical toxicology as appropriate — before or alongside continuing this prescription. My provider will coordinate my care and will not simply transfer my care without ensuring continuity.</p></div><div class="pc" style="--c:#c2410c"><p>Reassessment: My provider will reassess the benefit and risk of continuing this medication at every visit, and at minimum every 3 months.</p></div><h5>SECTION 4 — MONITORING AND GRADUATED RESPONSE</h5><div class="pc" style="--c:transparent"><p>Monitoring purpose: The monitoring activities described in this agreement — PDMP review, urine drug screening, pill counts, functional assessment — are safety tools, not punitive measures. Unexpected monitoring findings will be discussed with me directly before any clinical decisions are made. My provider will apply clinical judgment to each finding and will not dismiss me from care on the basis of a single monitoring result.</p></div><div class="pc" style="--c:transparent"><p>Response to concerns: If a monitoring finding, pattern of requests, or clinical concern arises, my provider will follow a graduated approach:</p><p>(1) First concern: Direct conversation, documentation, and reassessment of the monitoring plan. No automatic change to the prescription.</p><p>(2) Repeated or escalating concern: Formal review within the controlled substance agreement framework, urine drug screen if not already done, PDMP review, and discussion of whether the current management plan remains appropriate. Specialist input may be sought.</p><p>(3) Significant or unresolved concern: Specialist consultation before continuing. Continuation may not be appropriate without specialist co-management. If I am not able to continue in this practice, my provider will ensure I receive a referral or bridge plan — I will not be abruptly abandoned.</p></div><div class="pc" style="--c:#4d7c0f"><p>Driving and safety-sensitive activities: My provider has counseled me that controlled substance may impair driving and the operation of heavy machinery. I acknowledge this counseling. <span class="tok">[IF SAFETY-SENSITIVE OCCUPATION: I understand that my occupation as [OCCUPATION]</span> may have specific regulatory requirements regarding controlled substance use, and I agree to comply with applicable reporting obligations.]</p></div><div class="pc" style="--c:#b91c1c"><p>Opioid + benzodiazepine combination: My provider has informed me that I am prescribed both an opioid and a benzodiazepine. I understand that this combination carries an elevated risk of serious adverse outcomes including overdose. My provider has prescribed naloxone and has counseled my household on its use. I understand that the long-term goal is to reduce the overall burden of these medications, and that specialist input will be sought to plan any changes safely.</p></div><div class="pc" style="--c:#a21caf"><p>Substance use history: My provider is aware of my history of substance use and has considered it in prescribing this medication. I understand that my provider has chosen to use [extended-release / prodrug formulation] to reduce misuse risk. I agree to the enhanced monitoring plan described in this agreement. I understand that this agreement reflects my provider's care for my health, not a judgment about my character.</p></div><h5>SECTION 5 — ACKNOWLEDGMENT AND SIGNATURES</h5><div class="pc" style="--c:transparent"><p>I have read this agreement and have had the opportunity to ask questions. I understand its contents and agree to its terms. I understand that this agreement may be updated at any time with my participation, and that I will be given a copy of any updated agreement to review before signing.</p><p>I understand that this agreement is a clinical document, not a legal contract, and that my provider retains clinical discretion at all times.</p></div><div class="pc" style="--c:transparent"><p>Patient signature: _________________________ Date: _____________</p><p>Printed name: _________________________</p><p>Provider signature: _________________________ Date: _____________</p><p>Provider name and title: _________________________</p><p>Next scheduled review: _________________________</p><p>Contract version: v1.0.0 (2026-05-25) | Crystal Run Healthcare / Optum NY/NJ</p></div></div></details></div>
+</div></section>
+
+<section id="segments" class="chapter alt"><div class="wrap">
+  <p class="kicker">Segment by segment</p>
+  <h2 class="reveal">Each control, each option, the exact text</h2>
+  <p class="lede reveal">Text appears exactly as the builder inserts it. <span class="tok">[BRACKETED]</span> fields are completed at signing. <mark class="diff">Highlighted</mark> words differ between options. Small numbered tags link to the references.</p>
+  <section class="seg" id="seg-state" style="--c:#2f6fb3">
+  <div class="seghead"><span class="segn">01</span><h3>State</h3></div>
+  <p class="lede">New York requires a PDMP check before <em>every</em> Schedule II–IV prescription; New Jersey requires it at the first visit and quarterly during ongoing therapy. The builder swaps both the patient-consent and the provider-duty blocks. Highlighted words differ between states.</p>
+<div class="cols2"><div><h4 class="colh">New York</h4><article class="reveal clause" style="--c:#2f6fb3">
+  <header><h4>PDMP consent — New York (I-STOP)</h4><code>S2-VAR-PDMP-NY</code></header>
+  <div class="ctext"><p>Prescription monitoring: I understand that my provider is required by <mark class="diff">New York Public Health Law §3343-a (I-STOP)</mark> to review the New <mark class="diff">York State</mark> Prescription Monitoring Program <mark class="diff">registry before every prescription of this controlled substance.</mark> I consent to this review.</p></div>
+  <footer>
+    <div class="rule">Included when State = NY</div>
+    <div class="auth"><span>Authority:</span> NY Public Health Law §3343-a <span class="refnums"><a href="#ref-20">20</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article><article class="reveal clause" style="--c:#2f6fb3">
+  <header><h4>Provider PDMP review — New York</h4><code>S3-FIXED-PDMP-NY</code></header>
+  <div class="ctext"><p>PDMP review: My provider will review the New <mark class="diff">York State</mark> Prescription Monitoring Program <mark class="diff">registry before every prescription of this controlled substance,</mark> as required by <mark class="diff">NY Public Health Law §3343-a.</mark></p></div>
+  <footer>
+    <div class="rule">Included when State = NY</div>
+    <div class="auth"><span>Authority:</span> NY Public Health Law §3343-a <span class="refnums"><a href="#ref-20">20</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div>
+<div><h4 class="colh">New Jersey</h4><article class="reveal clause" style="--c:#2f6fb3">
+  <header><h4>PDMP consent — New Jersey</h4><code>S2-VAR-PDMP-NJ</code></header>
+  <div class="ctext"><p>Prescription monitoring: I understand that my provider is required by <mark class="diff">NJSA 45:1-46.1</mark> to review the New <mark class="diff">Jersey</mark> Prescription Monitoring Program <mark class="diff">at my first visit and quarterly during ongoing therapy.</mark> I consent to this review.</p></div>
+  <footer>
+    <div class="rule">Included when State = NJ</div>
+    <div class="auth"><span>Authority:</span> NJSA 45:1-46.1 (P.L.2017 c.341) <span class="refnums"><a href="#ref-21">21</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article><article class="reveal clause" style="--c:#2f6fb3">
+  <header><h4>Provider PDMP review — New Jersey</h4><code>S3-FIXED-PDMP-NJ</code></header>
+  <div class="ctext"><p>PDMP review: My provider will review the New <mark class="diff">Jersey</mark> Prescription Monitoring Program <mark class="diff">at my first visit and quarterly during ongoing therapy,</mark> as required by <mark class="diff">NJSA 45:1-46.1.</mark></p></div>
+  <footer>
+    <div class="rule">Included when State = NJ</div>
+    <div class="auth"><span>Authority:</span> NJSA 45:1-46.1 <span class="refnums"><a href="#ref-21">21</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div></div>
+</section><section class="seg" id="seg-class" style="--c:#6a4fb3">
+  <div class="seghead"><span class="segn">02</span><h3>Substance class</h3></div>
+  <p class="lede">Substance class adds no block of its own. It fills the <span class="tok">[MEDICATION CLASS]</span> token wherever it appears, sets the SmartPhrase code <code>.CSAGREE-[CLASS]-[STATE]-[TIER]</code>, and decides whether naloxone logic applies. When the builder is opened from the ADHD, opiate or benzodiazepine module, the class is pre-selected.</p>
+<div class="tablewrap"><table><thead><tr><th>Class</th><th>[MEDICATION CLASS] becomes</th><th>Code</th><th>Naloxone logic</th></tr></thead><tbody><tr><td>Opioid</td><td>“opioid”</td><td><code>OPT</code></td><td>With dose ≥ threshold or SUD history</td></tr><tr><td>Benzodiazepine</td><td>“benzodiazepine”</td><td><code>BNZ</code></td><td>Only via opioid + benzo</td></tr><tr><td>Stimulant</td><td>“stimulant”</td><td><code>STM</code></td><td>Only via opioid + benzo</td></tr><tr><td>Multi-class</td><td>“controlled substance”</td><td><code>MULTI</code></td><td>With dose ≥ threshold or SUD history</td></tr></tbody></table></div>
+<p class="lede">Blocks that carry the token (shown with the token unfilled):</p>
+<div class="cols2"><article class="reveal clause compact" style="--c:var(--fixed)">
+  <header><h4>Single prescriber</h4><code>S2-FIXED-SINGLE-PRESCRIBER</code></header>
+  <div class="ctext"><p>Single prescriber: I agree to obtain <span class="tok">[MEDICATION CLASS]</span> prescriptions from a single prescriber — the provider named in this agreement. I will not seek prescriptions for <span class="tok">[MEDICATION CLASS]</span> from any other provider without the knowledge and documented coordination of my prescribing provider.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> 21 CFR §1306.04 (legitimate medical purpose standard); standard of care convention <span class="refnums"><a href="#ref-17">17</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article><article class="reveal clause compact" style="--c:#4d7c0f">
+  <header><h4>Driving &amp; safety-sensitive work</h4><code>S4-VAR-DRIVING</code></header>
+  <div class="ctext"><p>Driving and safety-sensitive activities: My provider has counseled me that <span class="tok">[MEDICATION CLASS]</span> may impair driving and the operation of heavy machinery. I acknowledge this counseling. <span class="tok">[IF SAFETY-SENSITIVE OCCUPATION: I understand that my occupation as [OCCUPATION]</span> may have specific regulatory requirements regarding controlled substance use, and I agree to comply with applicable reporting obligations.]</p></div>
+  <footer>
+    <div class="rule">Included when Driving / safety-sensitive = on</div>
+    <div class="auth"><span>Authority:</span> Dassanayake meta-analysis (driving risk); Tran JAMA Network Open 2024 (reporting obligations by state); FAA/FMCSA regulations for safety-sensitive occupations <span class="refnums"><a href="#ref-12">12</a><a href="#ref-13">13</a><a href="#ref-14">14</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></div>
+</section><section class="seg" id="seg-indication" style="--c:#0f7f7a">
+  <div class="seghead"><span class="segn">03</span><h3>Indication status</h3></div>
+  <p class="lede">Exactly one indication statement is used. An inherited prescription is continued explicitly to avoid withdrawal harm — without endorsing the prior prescriber — and a prescription with no documented indication is framed as a time-limited bridge.</p>
+<div class="cols3"><div><h4 class="colh">Established</h4><article class="reveal clause" style="--c:#0f7f7a">
+  <header><h4>Indication — established</h4><code>S1-VAR-INDICATION-ESTABLISHED</code></header>
+  <div class="ctext"><p>Indication: This agreement covers <span class="tok">[MEDICATION]</span> prescribed for the management of <span class="tok">[DIAGNOSED CONDITION]</span>, documented in the medical record.</p></div>
+  <footer>
+    <div class="rule">Included when Indication = established</div>
+    <div class="auth"><span>Authority:</span> Standard documentation practice </div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div><div><h4 class="colh">Inherited / presumptive</h4><article class="reveal clause" style="--c:#0f7f7a">
+  <header><h4>Indication — inherited / presumptive</h4><code>S1-VAR-INDICATION-INHERITED</code></header>
+  <div class="ctext"><p>Indication: This agreement covers <span class="tok">[MEDICATION]</span> as an inherited prescription. A clinical assessment to formally establish the indication is planned within <span class="tok">[N]</span> visits. Continuation at this time is to prevent precipitated withdrawal or abrupt discontinuation harm pending that assessment. This continuation does not constitute endorsement of the prior prescribing provider's clinical decisions.</p></div>
+  <footer>
+    <div class="rule">Included when Indication = inherited-presumptive</div>
+    <div class="auth"><span>Authority:</span> CDC 2022 Recommendation 5; ASAM/ACMT 2025 Section on Inherited Patients <span class="refnums"><a href="#ref-1">1</a><a href="#ref-2">2</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></div><div><h4 class="colh">None — pending assessment</h4><article class="reveal clause" style="--c:#0f7f7a">
+  <header><h4>Indication — none, bridge supply</h4><code>S1-VAR-INDICATION-NONE</code></header>
+  <div class="ctext"><p>Indication: No documented clinical indication has been established for <span class="tok">[MEDICATION]</span> at this time. This agreement covers a bridge supply only, issued to prevent precipitated withdrawal while a full clinical assessment is completed within <span class="tok">[N]</span> visits. Continuation beyond that assessment requires an established indication.</p></div>
+  <footer>
+    <div class="rule">Included when Indication = none-pending-assessment</div>
+    <div class="auth"><span>Authority:</span> ASAM/ACMT 2025; institutional risk management <span class="refnums"><a href="#ref-2">2</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></div></div>
+</section><section class="seg" id="seg-tier" style="--c:#c2410c">
+  <div class="seghead"><span class="segn">04</span><h3>Risk tier</h3></div>
+  <p class="lede">The tier is where the patient populations diverge most. Highlighted words show what changes from the neighbouring tier.</p>
+<div class="tablewrap tiers"><table><colgroup><col style="width:120px"><col><col><col></colgroup><thead><tr><th></th><th class="t-standard">Standard</th><th class="t-enhanced">Enhanced</th><th class="t-high-risk">High-risk</th></tr></thead><tbody>
+<tr><th scope="row">Drug screening</th><td><article class="reveal clause compact" style="--c:#c2410c">
+  <header><h4>Drug screening — every 6–12 months</h4><code>S2-VAR-UDS-STANDARD</code></header>
+  <div class="ctext"><p>Drug screening: I agree to provide urine samples for drug screening when requested by my provider, at a frequency of approximately every <mark class="diff">6–12</mark> months or as clinically indicated. I understand that the purpose of this screening is to support safe prescribing, not to punish me.</p></div>
+  <footer>
+    <div class="rule">Included when Risk tier = standard</div>
+    <div class="auth"><span>Authority:</span> AAPM/APS expert consensus; CDC 2022 (at least annually) <span class="refnums"><a href="#ref-1">1</a><a href="#ref-4">4</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></td><td><article class="reveal clause compact" style="--c:#c2410c">
+  <header><h4>Drug screening — about every 3 months</h4><code>S2-VAR-UDS-ENHANCED</code></header>
+  <div class="ctext"><p>Drug screening: I agree to provide urine samples for drug screening when requested by my provider, at a frequency of approximately every <mark class="diff">3</mark> months or as clinically indicated. I understand that the purpose of this screening is to support safe prescribing, not to punish me.</p></div>
+  <footer>
+    <div class="rule">Included when Risk tier = enhanced</div>
+    <div class="auth"><span>Authority:</span> AAPM/APS expert consensus (1–3 times/year for moderate risk) <span class="refnums"><a href="#ref-4">4</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></td><td><article class="reveal clause compact" style="--c:#c2410c">
+  <header><h4>Drug screening — every visit</h4><code>S2-VAR-UDS-HIGHRISK</code></header>
+  <div class="ctext"><p>Drug screening: I agree to provide urine samples for drug screening at every <mark class="diff">visit</mark> or as <mark class="diff">requested by my provider.</mark> I understand that the purpose of this screening is to support safe <mark class="diff">prescribing and my safety,</mark> not to punish me.</p></div>
+  <footer>
+    <div class="rule">Included when Risk tier = high-risk</div>
+    <div class="auth"><span>Authority:</span> AAPM/APS expert consensus; institutional high-risk monitoring standard <span class="refnums"><a href="#ref-4">4</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></td></tr>
+<tr><th scope="row">Pill counts</th><td><div class="absent">Not included</div></td><td><article class="reveal clause compact" style="--c:#c2410c">
+  <header><h4>Pill counts</h4><code>S2-VAR-PILL-COUNT-ENHANCED</code></header>
+  <div class="ctext"><p>Pill counts: I agree to bring my medication to any appointment when requested for a pill count. I understand that pill counts may be requested without advance notice.</p></div>
+  <footer>
+    <div class="rule">Included when Risk tier = enhanced or high-risk</div>
+    <div class="auth"><span>Authority:</span> ASAM/AAAP 2024; ASAM/ACMT 2025; institutional enhanced monitoring standard <span class="refnums"><a href="#ref-2">2</a><a href="#ref-3">3</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></td><td><article class="reveal clause compact" style="--c:#c2410c">
+  <header><h4>Pill counts</h4><code>S2-VAR-PILL-COUNT-ENHANCED</code></header>
+  <div class="ctext"><p>Pill counts: I agree to bring my medication to any appointment when requested for a pill count. I understand that pill counts may be requested without advance notice.</p></div>
+  <footer>
+    <div class="rule">Included when Risk tier = enhanced or high-risk</div>
+    <div class="auth"><span>Authority:</span> ASAM/AAAP 2024; ASAM/ACMT 2025; institutional enhanced monitoring standard <span class="refnums"><a href="#ref-2">2</a><a href="#ref-3">3</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></td></tr>
+<tr><th scope="row">Reassessment</th><td><article class="reveal clause compact" style="--c:#c2410c">
+  <header><h4>Reassessment — at least annually</h4><code>S3-VAR-REASSESSMENT-STANDARD</code></header>
+  <div class="ctext"><p>Reassessment: My provider will reassess the benefit and risk of continuing this medication at least <mark class="diff">annually,</mark> or sooner if <mark class="diff">my functional status changes, new</mark> concerns <mark class="diff">emerge, or I request a reassessment.</mark></p></div>
+  <footer>
+    <div class="rule">Included when Risk tier = standard</div>
+    <div class="auth"><span>Authority:</span> CDC 2022; AAFP 2024; institutional standard <span class="refnums"><a href="#ref-1">1</a><a href="#ref-6">6</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></td><td><article class="reveal clause compact" style="--c:#c2410c">
+  <header><h4>Reassessment — at least every 6 months</h4><code>S3-VAR-REASSESSMENT-ENHANCED</code></header>
+  <div class="ctext"><p>Reassessment: My provider will reassess the benefit and risk of continuing this medication at least <mark class="diff">every 6 months,</mark> or sooner if concerns <mark class="diff">emerge.</mark></p></div>
+  <footer>
+    <div class="rule">Included when Risk tier = enhanced</div>
+    <div class="auth"><span>Authority:</span> CDC 2022; AAPM/APS consensus; institutional enhanced monitoring standard <span class="refnums"><a href="#ref-1">1</a><a href="#ref-4">4</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></td><td><article class="reveal clause compact" style="--c:#c2410c">
+  <header><h4>Reassessment — every visit / ≤3 months</h4><code>S3-VAR-REASSESSMENT-HIGHRISK</code></header>
+  <div class="ctext"><p>Reassessment: My provider will reassess the benefit and risk of continuing this medication at <mark class="diff">every visit, and at minimum</mark> every <mark class="diff">3 months.</mark></p></div>
+  <footer>
+    <div class="rule">Included when Risk tier = high-risk</div>
+    <div class="auth"><span>Authority:</span> ASAM/ACMT 2025 (opioid+benzo: every 3 months or every encounter); institutional high-risk standard <span class="refnums"><a href="#ref-2">2</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></td></tr>
+<tr><th scope="row">Specialist</th><td><div class="absent">Not included</div></td><td><div class="absent">Not included</div></td><td><article class="reveal clause compact" style="--c:#c2410c">
+  <header><h4>Specialist involvement</h4><code>S3-VAR-SPECIALIST-HIGHRISK</code></header>
+  <div class="ctext"><p>Specialist involvement: My provider will arrange consultation with a specialist — addiction medicine, addiction psychiatry, pain management, or medical toxicology as appropriate — before or alongside continuing this prescription. My provider will coordinate my care and will not simply transfer my care without ensuring continuity.</p></div>
+  <footer>
+    <div class="rule">Included when Risk tier = high-risk</div>
+    <div class="auth"><span>Authority:</span> ASAM/AAAP 2024; ASAM/ACMT 2025; CDC 2022 <span class="refnums"><a href="#ref-1">1</a><a href="#ref-2">2</a><a href="#ref-3">3</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></td></tr>
+<tr><th scope="row">Next review</th><td class="big">12 months</td><td class="big">6 months</td><td class="big">3 months</td></tr>
+</tbody></table></div>
+<h4 class="subh">How the tier is suggested</h4><div class="logic">
+  <div class="lcol hr"><h4>High-risk if any</h4><ul>
+    <li>Active SUD without specialist involvement</li><li>Opioid + benzodiazepine</li>
+    <li>Cross-class concurrent controlled substances</li><li>Prior lost-medication report</li>
+    <li>No indication at dose ≥ threshold</li></ul></div>
+  <div class="lcol en"><h4>otherwise Enhanced if any</h4><ul>
+    <li>Past or active SUD without specialist</li><li>Early-fill history</li><li>Dose ≥ threshold</li>
+    <li>Age ≥ 65</li><li>Inherited / presumptive indication</li><li>Same-class concurrent CS</li></ul></div>
+  <div class="lcol st"><h4>otherwise Standard</h4><ul><li>No elevated-risk inputs set</li></ul></div>
+</div>
+<p class="note">The tier is a <b>suggestion with its rationale shown</b>. The prescriber confirms or overrides it; overrides are flagged. Next review: Standard 12 months · Enhanced 6 months · High-risk 3 months.</p>
+<p class="note"><b>Naloxone auto-logic:</b> on for any opioid + benzodiazepine combination, or for an opioid-involving class (opioid, multi-class) with dose ≥ threshold or any SUD history. Overridable.</p>
+</section><section class="seg" id="seg-sud" style="--c:#a21caf">
+  <div class="seghead"><span class="segn">05</span><h3>SUD history</h3></div>
+  <p class="lede">With no SUD history neither block appears. Past or active SUD adds both — the same text for either — and changes the tier suggestion: past SUD suggests Enhanced, active SUD suggests High-risk, unless a specialist is involved. SUD history also turns on naloxone for opioid-involving classes.</p>
+<div class="cols2"><div><h4 class="colh">Patient obligation</h4><article class="reveal clause" style="--c:#a21caf">
+  <header><h4>Extended-release / prodrug formulation</h4><code>S2-VAR-ER-FORMULATION</code></header>
+  <div class="ctext"><p>Formulation: I understand that my provider has prescribed an extended-release or prodrug formulation of <span class="tok">[MEDICATION]</span> because of my history of substance use. I agree not to request a change to an immediate-release formulation without discussing this with my provider.</p></div>
+  <footer>
+    <div class="rule">Included when SUD history = past or active</div>
+    <div class="auth"><span>Authority:</span> ASAM/AAAP 2024 (stimulants); ASAM/ACMT 2025 (benzodiazepines); institutional SUD-aware prescribing standard <span class="refnums"><a href="#ref-2">2</a><a href="#ref-3">3</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></div><div><h4 class="colh">Monitoring section</h4><article class="reveal clause" style="--c:#a21caf">
+  <header><h4>Substance-use history</h4><code>S4-VAR-SUD-AWARE</code></header>
+  <div class="ctext"><p>Substance use history: My provider is aware of my history of substance use and has considered it in prescribing this medication. I understand that my provider has chosen to use [extended-release / prodrug formulation] to reduce misuse risk. I agree to the enhanced monitoring plan described in this agreement. I understand that this agreement reflects my provider's care for my health, not a judgment about my character.</p></div>
+  <footer>
+    <div class="rule">Included when SUD history = past or active</div>
+    <div class="auth"><span>Authority:</span> ASAM/AAAP 2024; ASAM/ACMT 2025; Baweja JAACAP 2025 (outcomes data) <span class="refnums"><a href="#ref-2">2</a><a href="#ref-3">3</a><a href="#ref-15">15</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></div></div>
+</section><section class="seg" id="seg-combo" style="--c:#b91c1c">
+  <div class="seghead"><span class="segn">06</span><h3>Opioid + benzodiazepine</h3></div>
+  <p class="lede">The combination carries an FDA boxed warning. Turning this on adds the acknowledgment below, forces naloxone on, and suggests High-risk — which in turn adds visit-level screening, pill counts, specialist involvement and 3-month review.</p><div class="cols2 onoff"><div><h4 class="colh">Off</h4><div class="absent big">Block not included — the agreement carries no opioid + benzodiazepine combination language.</div></div><div><h4 class="colh">On</h4><article class="reveal clause" style="--c:#b91c1c">
+  <header><h4>Opioid + benzodiazepine combination</h4><code>S4-VAR-COMBO-OPIOID-BENZO</code></header>
+  <div class="ctext"><p>Opioid + benzodiazepine combination: My provider has informed me that I am prescribed both an opioid and a benzodiazepine. I understand that this combination carries an elevated risk of serious adverse outcomes including overdose. My provider has prescribed naloxone and has counseled my household on its use. I understand that the long-term goal is to reduce the overall burden of these medications, and that specialist input will be sought to plan any changes safely.</p></div>
+  <footer>
+    <div class="rule">Included when Opioid + benzo = on</div>
+    <div class="auth"><span>Authority:</span> FDA boxed warning (2016); CDC 2022 Recommendation 11 (Category B); ASAM/ACMT 2025 (naloxone strong recommendation); Hernandez JAMA Network Open 2018 (time-dependent risk) <span class="refnums"><a href="#ref-1">1</a><a href="#ref-2">2</a><a href="#ref-10">10</a><a href="#ref-11">11</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div></div>
+</section><section class="seg" id="seg-age" style="--c:#b45309">
+  <div class="seghead"><span class="segn">07</span><h3>Age ≥ 65</h3></div>
+  <p class="lede">Adds documented Beers-criteria counseling about falls, fractures and cognition, and suggests at least Enhanced. The tier remains overridable for a low-dose, stable older patient.</p><div class="cols2 onoff"><div><h4 class="colh">Off</h4><div class="absent big">Block not included — the agreement carries no age-related risks (65+) language.</div></div><div><h4 class="colh">On</h4><article class="reveal clause" style="--c:#b45309">
+  <header><h4>Age-related risks (65+)</h4><code>S4-VAR-AGE-65</code></header>
+  <div class="ctext"><p>Age-related risks: My provider has discussed with me that benzodiazepines and sedating medications carry increased risks of falls, fractures, and cognitive effects in adults over 65, as noted in the American Geriatrics Society Beers Criteria. I understand these risks and have discussed them with my provider. My provider and I have agreed on the clinical rationale for continuing this medication at this time, and will reassess annually or sooner if my functional status changes.</p></div>
+  <footer>
+    <div class="rule">Included when Age ≥ 65 = on</div>
+    <div class="auth"><span>Authority:</span> AGS Beers Criteria 2023; Donnelly PLoS One 2017 (fracture risk); Crowe Arch Clin Neuropsychol 2018 (cognitive effects) <span class="refnums"><a href="#ref-7">7</a><a href="#ref-8">8</a><a href="#ref-9">9</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div></div>
+</section><section class="seg" id="seg-driving" style="--c:#4d7c0f">
+  <div class="seghead"><span class="segn">08</span><h3>Driving / safety-sensitive</h3></div>
+  <p class="lede">Adds documented impairment counseling; the bracketed occupational sentence is completed only for safety-sensitive jobs. Does not change the tier.</p><div class="cols2 onoff"><div><h4 class="colh">Off</h4><div class="absent big">Block not included — the agreement carries no driving &amp; safety-sensitive work language.</div></div><div><h4 class="colh">On</h4><article class="reveal clause" style="--c:#4d7c0f">
+  <header><h4>Driving &amp; safety-sensitive work</h4><code>S4-VAR-DRIVING</code></header>
+  <div class="ctext"><p>Driving and safety-sensitive activities: My provider has counseled me that <span class="tok">[MEDICATION CLASS]</span> may impair driving and the operation of heavy machinery. I acknowledge this counseling. <span class="tok">[IF SAFETY-SENSITIVE OCCUPATION: I understand that my occupation as [OCCUPATION]</span> may have specific regulatory requirements regarding controlled substance use, and I agree to comply with applicable reporting obligations.]</p></div>
+  <footer>
+    <div class="rule">Included when Driving / safety-sensitive = on</div>
+    <div class="auth"><span>Authority:</span> Dassanayake meta-analysis (driving risk); Tran JAMA Network Open 2024 (reporting obligations by state); FAA/FMCSA regulations for safety-sensitive occupations <span class="refnums"><a href="#ref-12">12</a><a href="#ref-13">13</a><a href="#ref-14">14</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></div></div>
+</section><section class="seg" id="seg-naloxone" style="--c:#0369a1">
+  <div class="seghead"><span class="segn">09</span><h3>Naloxone</h3></div>
+  <p class="lede">Set automatically from class, dose, SUD and combination inputs; the prescriber can override it either way.</p><div class="cols2 onoff"><div><h4 class="colh">Off</h4><div class="absent big">Block not included — the agreement carries no naloxone offer &amp; education language.</div></div><div><h4 class="colh">On</h4><article class="reveal clause" style="--c:#0369a1">
+  <header><h4>Naloxone offer &amp; education</h4><code>S3-VAR-NALOXONE</code></header>
+  <div class="ctext"><p>Naloxone: My provider will offer to prescribe naloxone (overdose reversal medication) and will provide education on its use. I understand why naloxone has been recommended in my situation.</p></div>
+  <footer>
+    <div class="rule">Included when Naloxone = on</div>
+    <div class="auth"><span>Authority:</span> CDC 2022 (offer naloxone when: &gt;=50 MME, concurrent benzo, SUD history, sleep-disordered breathing, post-taper/post-incarceration); ASAM/ACMT 2025 (strong recommendation for opioid+benzo) <span class="refnums"><a href="#ref-1">1</a><a href="#ref-2">2</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div></div>
+</section><section class="seg" id="seg-other" style="--c:#64748b">
+  <div class="seghead"><span class="segn">10</span><h3>Other risk inputs</h3></div>
+  <p class="lede">These inputs add no text of their own. They exist so the tier suggestion reflects the real risk picture — and so the PDMP findings that worry us most (early fills, lost-medication reports, multiple prescribers) translate directly into monitoring intensity.</p>
+<div class="tablewrap"><table><thead><tr><th>Input</th><th>Effect on suggested tier</th></tr></thead><tbody><tr><td>Concurrent CS — same class</td><td>Enhanced</td></tr><tr><td>Concurrent CS — cross class</td><td>High-risk</td></tr><tr><td>Dose ≥ threshold</td><td>Enhanced (High-risk if no indication)</td></tr><tr><td>Early-fill history</td><td>Enhanced</td></tr><tr><td>Prior lost meds</td><td>High-risk</td></tr><tr><td>Specialist involved</td><td>Removes the SUD-based escalation</td></tr></tbody></table></div>
+</section>
+</div></section>
+
+<section id="core" class="chapter"><div class="wrap">
+  <p class="kicker">The common core</p>
+  <h2 class="reveal">The 15 blocks every patient signs</h2>
+  <div class="coresec"><h3><span class="secnum">1</span>Scope and Parties</h3><p class="lede">Who is agreeing to what, for which medication — and why it is being prescribed. The indication block changes with how well-established the indication is.</p><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Agreement header &amp; clinical-discretion statement</h4><code>S1-FIXED-HEADER</code></header>
+  <div class="ctext"><p>CONTROLLED SUBSTANCE PRESCRIBING AGREEMENT</p><p>This agreement is entered into between <span class="tok">[PROVIDER NAME]</span>, <span class="tok">[TITLE]</span>, of Crystal Run Healthcare, and <span class="tok">[PATIENT NAME]</span> (Date of Birth: <span class="tok">[DOB]</span>) on <span class="tok">[DATE]</span>. This agreement covers the following medication(s): <span class="tok">[MEDICATION, DOSE, FREQUENCY]</span>.</p><p>This agreement is a clinical document establishing shared expectations for the prescribing relationship. It is advisory in nature; experienced providers retain clinical discretion. Nothing in this agreement limits the provider's ability to exercise independent clinical judgment.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> CDC 2022 Recommendation 5 (establish treatment goals and care plan at inherited-patient first visit); ASAM/ACMT 2025 (pretaper assessment framework) <span class="refnums"><a href="#ref-1">1</a><a href="#ref-2">2</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div><div class="coresec"><h3><span class="secnum">2</span>Patient Obligations</h3><p class="lede">What the patient agrees to. Core obligations are identical for everyone; monitoring intensity, PDMP wording, and SUD-aware formulation language are modular.</p><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Single prescriber</h4><code>S2-FIXED-SINGLE-PRESCRIBER</code></header>
+  <div class="ctext"><p>Single prescriber: I agree to obtain <span class="tok">[MEDICATION CLASS]</span> prescriptions from a single prescriber — the provider named in this agreement. I will not seek prescriptions for <span class="tok">[MEDICATION CLASS]</span> from any other provider without the knowledge and documented coordination of my prescribing provider.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> 21 CFR §1306.04 (legitimate medical purpose standard); standard of care convention <span class="refnums"><a href="#ref-17">17</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Single pharmacy</h4><code>S2-FIXED-SINGLE-PHARMACY</code></header>
+  <div class="ctext"><p>Single pharmacy: I agree to fill all prescriptions for <span class="tok">[MEDICATION]</span> at a single pharmacy: <span class="tok">[PHARMACY NAME AND LOCATION]</span>. I will notify my provider in advance if I need to use a different pharmacy due to supply issues, travel, or insurance requirements, and will document the reason.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> Institutional risk management </div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Use as prescribed</h4><code>S2-FIXED-AS-PRESCRIBED</code></header>
+  <div class="ctext"><p>Use as prescribed: I agree to take <span class="tok">[MEDICATION]</span> only as prescribed — at the prescribed dose, frequency, and for the prescribed indication. I will not adjust my dose without discussing it with my provider first.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> Standard prescribing agreement element; CDC 2022 <span class="refnums"><a href="#ref-1">1</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>No sharing or transfer</h4><code>S2-FIXED-NO-SHARING</code></header>
+  <div class="ctext"><p>No sharing or transfer: I understand that sharing, selling, or otherwise transferring my controlled substance prescription to another person is a federal felony under 21 USC §841. I agree not to do so.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> 21 USC §841 <span class="refnums"><a href="#ref-19">19</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Safe storage</h4><code>S2-FIXED-SAFE-STORAGE</code></header>
+  <div class="ctext"><p>Safe storage: I agree to store <span class="tok">[MEDICATION]</span> in a secure location, out of reach of children and visitors. I understand that proper storage is my responsibility.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> CDC 2022; DEA guidance on safe medication storage <span class="refnums"><a href="#ref-1">1</a><a href="#ref-22">22</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Disclosure of other substances</h4><code>S2-FIXED-DISCLOSURE</code></header>
+  <div class="ctext"><p>Disclosure: I agree to inform my provider of all other medications, supplements, and substances I am using, including over-the-counter medications, alcohol, cannabis, and any controlled substances prescribed by other providers.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> Standard safety monitoring practice </div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Refill timing</h4><code>S2-VAR-NO-EARLY-REFILLS</code></header>
+  <div class="ctext"><p>Refill timing: I understand that my medication will be prescribed on a set schedule. I agree not to request early refills except in advance for documented travel or documented supply-chain issues. I understand that federal law (21 CFR §1306.12) permits multiple sequential prescriptions with earliest fill dates for up to 90 days of supply when clinically appropriate.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> 21 CFR §1306.12; CDC 2022 <span class="refnums"><a href="#ref-1">1</a><a href="#ref-18">18</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Lost or stolen medication</h4><code>S2-VAR-NO-REPLACEMENT</code></header>
+  <div class="ctext"><p>Lost or stolen medication: I understand that Crystal Run Healthcare's policy is not to replace lost or stolen controlled substance prescriptions. I understand that this is an institutional policy; federal law does not categorically prohibit replacement. If my medication is lost or stolen, I agree to report the loss to my provider and, if stolen, to file a police report.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> 21 CFR §1306.04; ACOEM Opioid Treatment Contract template; institutional policy <span class="refnums"><a href="#ref-16">16</a><a href="#ref-17">17</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Treatment goals (function)</h4><code>S2-VAR-FUNCTIONAL-GOAL</code></header>
+  <div class="ctext"><p>Treatment goals: I understand that the goal of this medication is to support my daily function — my ability to work, maintain relationships, and carry out daily activities — and to manage <span class="tok">[CONDITION]</span>. I understand that improvement in function, even if pain or symptoms are not fully eliminated, is a meaningful treatment outcome. I agree to discuss my functional status at each visit.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> CDC 2022 (functional improvement as primary goal; PEG scale); ASAM/ACMT 2025 <span class="refnums"><a href="#ref-1">1</a><a href="#ref-2">2</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div><div class="coresec"><h3><span class="secnum">3</span>Provider Obligations</h3><p class="lede">What the prescriber commits to in return: PDMP review, functional assessment, reassessment cadence, and — when indicated — naloxone and specialist involvement.</p><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Functional assessment each visit</h4><code>S3-FIXED-FUNCTIONAL-ASSESSMENT</code></header>
+  <div class="ctext"><p>Functional assessment: My provider will assess my functional status — including my ability to work, maintain relationships, carry out daily activities, and drive safely — at each visit.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> CDC 2022; VA/DoD 2022 <span class="refnums"><a href="#ref-1">1</a><a href="#ref-5">5</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div><div class="coresec"><h3><span class="secnum">4</span>Monitoring and Graduated Response</h3><p class="lede">How monitoring findings are handled (graduated, non-punitive), plus situation-specific risk counseling that only appears when it applies.</p><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Monitoring is a safety tool, not punishment</h4><code>S4-FIXED-MONITORING-FRAMING</code></header>
+  <div class="ctext"><p>Monitoring purpose: The monitoring activities described in this agreement — PDMP review, urine drug screening, pill counts, functional assessment — are safety tools, not punitive measures. Unexpected monitoring findings will be discussed with me directly before any clinical decisions are made. My provider will apply clinical judgment to each finding and will not dismiss me from care on the basis of a single monitoring result.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> CDC 2022 (should not dismiss patients from care on the basis of toxicology results or PDMP information); ASAM/ACMT 2025 <span class="refnums"><a href="#ref-1">1</a><a href="#ref-2">2</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Graduated response to concerns</h4><code>S4-FIXED-GRADUATED-RESPONSE</code></header>
+  <div class="ctext"><p>Response to concerns: If a monitoring finding, pattern of requests, or clinical concern arises, my provider will follow a graduated approach:</p><p>(1) First concern: Direct conversation, documentation, and reassessment of the monitoring plan. No automatic change to the prescription.</p><p>(2) Repeated or escalating concern: Formal review within the controlled substance agreement framework, urine drug screen if not already done, PDMP review, and discussion of whether the current management plan remains appropriate. Specialist input may be sought.</p><p>(3) Significant or unresolved concern: Specialist consultation before continuing. Continuation may not be appropriate without specialist co-management. If I am not able to continue in this practice, my provider will ensure I receive a referral or bridge plan — I will not be abruptly abandoned.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> CDC 2022; ASAM/ACMT 2025; AAFP (avoid dismissing patients); APS/AAPM 2009 (graduated response to aberrant behaviors) <span class="refnums"><a href="#ref-1">1</a><a href="#ref-2">2</a><a href="#ref-4">4</a><a href="#ref-6">6</a></span></div>
+    <div class="badge prop">Proposed institutional standard — no national mandate</div>
+  </footer>
+</article></div><div class="coresec"><h3><span class="secnum">5</span>Acknowledgment and Signatures</h3><p class="lede">Acknowledgment that this is a clinical agreement, not a legal contract, and signatures stamped with the library version.</p><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Acknowledgment</h4><code>S5-FIXED-ACKNOWLEDGMENT</code></header>
+  <div class="ctext"><p>I have read this agreement and have had the opportunity to ask questions. I understand its contents and agree to its terms. I understand that this agreement may be updated at any time with my participation, and that I will be given a copy of any updated agreement to review before signing.</p><p>I understand that this agreement is a clinical document, not a legal contract, and that my provider retains clinical discretion at all times.</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> Institutional standard; CDC 2022 <span class="refnums"><a href="#ref-1">1</a></span></div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article><article class="reveal clause" style="--c:var(--fixed)">
+  <header><h4>Signatures &amp; version stamp</h4><code>S5-FIXED-SIGNATURES</code></header>
+  <div class="ctext"><p>Patient signature: _________________________ Date: _____________</p><p>Printed name: _________________________</p><p>Provider signature: _________________________ Date: _____________</p><p>Provider name and title: _________________________</p><p>Next scheduled review: _________________________</p><p>Contract version: v1.0.0 (2026-05-25) | Crystal Run Healthcare / Optum NY/NJ</p></div>
+  <footer>
+    <div class="rule">Always included</div>
+    <div class="auth"><span>Authority:</span> Institutional standard </div>
+    <div class="badge std">Grounded in statute / guideline</div>
+  </footer>
+</article></div>
+</div></section>
+
+<section id="governance" class="chapter alt"><div class="wrap">
+  <p class="kicker">Governance</p>
+  <h2 class="reveal">Safeguards built into the design</h2>
+  <div class="reveal"><div class="gov">
+  <div><h4>Clinician stays in charge</h4><p>Tier and naloxone are suggestions with visible rationale. Overrides are allowed and flagged. The header and acknowledgment state the agreement is advisory and preserves clinical discretion.</p></div>
+  <div><h4>Non-punitive by design</h4><p>Every agreement includes the monitoring-framing and graduated-response blocks: no dismissal on a single result, conversation before decisions, and a referral or bridge plan rather than abandonment.</p></div>
+  <div><h4>Honest about authority</h4><p>19 of 36 blocks are flagged <b>proposed institutional standard</b> — they rest on convention or institutional policy rather than a national mandate. These are the blocks that need this committee's endorsement.</p></div>
+  <div><h4>Versioned &amp; Epic-ready</h4><p>Signatures carry the library version (v1.0.0 (2026-05-25)). Each configuration maps to a SmartPhrase name such as <code>.CSAGREE-OPT-NY-STD</code>; bracketed fields are completed at signing.</p></div>
+</div>
+<h4 class="subh">Blocks flagged for committee endorsement</h4>
+<ul class="proplist"><li style="--c:#0f7f7a"><span>Indication — inherited / presumptive</span><code>S1-VAR-INDICATION-INHERITED</code></li><li style="--c:#0f7f7a"><span>Indication — none, bridge supply</span><code>S1-VAR-INDICATION-NONE</code></li><li style="--c:var(--fixed)"><span>Single prescriber</span><code>S2-FIXED-SINGLE-PRESCRIBER</code></li><li style="--c:var(--fixed)"><span>Single pharmacy</span><code>S2-FIXED-SINGLE-PHARMACY</code></li><li style="--c:var(--fixed)"><span>Safe storage</span><code>S2-FIXED-SAFE-STORAGE</code></li><li style="--c:#c2410c"><span>Drug screening — every 6–12 months</span><code>S2-VAR-UDS-STANDARD</code></li><li style="--c:#c2410c"><span>Drug screening — about every 3 months</span><code>S2-VAR-UDS-ENHANCED</code></li><li style="--c:#c2410c"><span>Drug screening — every visit</span><code>S2-VAR-UDS-HIGHRISK</code></li><li style="--c:var(--fixed)"><span>Lost or stolen medication</span><code>S2-VAR-NO-REPLACEMENT</code></li><li style="--c:#a21caf"><span>Extended-release / prodrug formulation</span><code>S2-VAR-ER-FORMULATION</code></li><li style="--c:#c2410c"><span>Pill counts</span><code>S2-VAR-PILL-COUNT-ENHANCED</code></li><li style="--c:#c2410c"><span>Specialist involvement</span><code>S3-VAR-SPECIALIST-HIGHRISK</code></li><li style="--c:#c2410c"><span>Reassessment — at least annually</span><code>S3-VAR-REASSESSMENT-STANDARD</code></li><li style="--c:#c2410c"><span>Reassessment — at least every 6 months</span><code>S3-VAR-REASSESSMENT-ENHANCED</code></li><li style="--c:#c2410c"><span>Reassessment — every visit / ≤3 months</span><code>S3-VAR-REASSESSMENT-HIGHRISK</code></li><li style="--c:var(--fixed)"><span>Monitoring is a safety tool, not punishment</span><code>S4-FIXED-MONITORING-FRAMING</code></li><li style="--c:var(--fixed)"><span>Graduated response to concerns</span><code>S4-FIXED-GRADUATED-RESPONSE</code></li><li style="--c:#4d7c0f"><span>Driving &amp; safety-sensitive work</span><code>S4-VAR-DRIVING</code></li><li style="--c:#a21caf"><span>Substance-use history</span><code>S4-VAR-SUD-AWARE</code></li></ul></div>
+</div></section>
+
+<section id="references" class="chapter"><div class="wrap">
+  <p class="kicker">References</p>
+  <h2 class="reveal">Cited authorities</h2>
+  <p class="lede">The authorities each block cites. Links are given where a stable public source exists.</p>
+  <ol class="refs"><li id="ref-1">Dowell D, Ragan KR, Jones CM, Baldwin GT, Chou R. CDC Clinical Practice Guideline for Prescribing Opioids for Pain — United States, 2022. MMWR Recomm Rep 2022;71(No. RR-3):1–95. <a href="https://www.cdc.gov/mmwr/volumes/71/rr/rr7103a1.htm" target="_blank" rel="noopener">www.cdc.gov/mmwr/volumes/71/rr/rr7103a1.htm</a></li><li id="ref-2">ASAM and partner societies (incl. ACMT). Joint Clinical Practice Guideline on Benzodiazepine Tapering, 2025. <a href="https://www.asam.org/quality-care/clinical-guidelines" target="_blank" rel="noopener">www.asam.org/quality-care/clinical-guidelines</a></li><li id="ref-3">ASAM / AAAP. Clinical Practice Guideline on the Management of Stimulant Use Disorder, 2024. <a href="https://www.asam.org/quality-care/clinical-guidelines" target="_blank" rel="noopener">www.asam.org/quality-care/clinical-guidelines</a></li><li id="ref-4">Chou R, Fanciullo GJ, Fine PG, et al. Clinical guidelines for the use of chronic opioid therapy in chronic noncancer pain (APS/AAPM). J Pain 2009;10(2):113–130. <a href="https://doi.org/10.1016/j.jpain.2008.10.008" target="_blank" rel="noopener">doi.org/10.1016/j.jpain.2008.10.008</a></li><li id="ref-5">VA/DoD Clinical Practice Guideline for the Use of Opioids in the Management of Chronic Pain, 2022. <a href="https://www.healthquality.va.gov/guidelines/pain/cot/" target="_blank" rel="noopener">www.healthquality.va.gov/guidelines/pain/cot/</a></li><li id="ref-6">American Academy of Family Physicians — guidance on chronic opioid therapy and avoiding patient dismissal (as cited in the module).</li><li id="ref-7">2023 American Geriatrics Society Beers Criteria® Update Expert Panel. American Geriatrics Society 2023 updated AGS Beers Criteria® for potentially inappropriate medication use in older adults. J Am Geriatr Soc 2023;71(7):2052–2081. <a href="https://doi.org/10.1111/jgs.18372" target="_blank" rel="noopener">doi.org/10.1111/jgs.18372</a></li><li id="ref-8">Donnelly K, et al. Benzodiazepines, Z-drugs and the risk of hip fracture: a systematic review and meta-analysis. PLoS One 2017.</li><li id="ref-9">Crowe SF, Stranks EK. The residual medium and long-term cognitive effects of benzodiazepine use: an updated meta-analysis. Arch Clin Neuropsychol 2018;33(7):901–911.</li><li id="ref-10">US FDA Drug Safety Communication (Aug 2016): FDA warns about serious risks and death when combining opioid pain or cough medicines with benzodiazepines; requires its strongest warning. <a href="https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-warns-about-serious-risks-and-death-when-combining-opioid-pain-or" target="_blank" rel="noopener">www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-warns-about-serious-risks-and-death-when-combining-opioid-pain-or</a></li><li id="ref-11">Hernandez I, He M, Brooks MM, Zhang Y. Exposure-response association between concurrent opioid and benzodiazepine use and risk of opioid-related overdose in Medicare Part D beneficiaries. JAMA Netw Open 2018;1(2):e180919. <a href="https://doi.org/10.1001/jamanetworkopen.2018.0919" target="_blank" rel="noopener">doi.org/10.1001/jamanetworkopen.2018.0919</a></li><li id="ref-12">Dassanayake T, Michie P, Carter G, Jones A. Effects of benzodiazepines, antidepressants and opioids on driving: a systematic review and meta-analysis of epidemiological and experimental evidence. Drug Saf 2011;34(2):125–156.</li><li id="ref-13">Tran et al. JAMA Network Open 2024 — state-by-state driver medical reporting obligations (as cited in the module).</li><li id="ref-14">FAA (14 CFR Part 67) and FMCSA (49 CFR Part 391) medical standards for safety-sensitive occupations.</li><li id="ref-15">Baweja et al. J Am Acad Child Adolesc Psychiatry 2025 — outcomes data on stimulant prescribing with SUD history (as cited in the module).</li><li id="ref-16">American College of Occupational and Environmental Medicine — Opioid Treatment Agreement template.</li><li id="ref-17">21 CFR §1306.04 — Purpose of issue of prescription (legitimate medical purpose). <a href="https://www.law.cornell.edu/cfr/text/21/1306.04" target="_blank" rel="noopener">www.law.cornell.edu/cfr/text/21/1306.04</a></li><li id="ref-18">21 CFR §1306.12 — Refilling prescriptions; issuance of multiple prescriptions (up to 90-day supply). <a href="https://www.law.cornell.edu/cfr/text/21/1306.12" target="_blank" rel="noopener">www.law.cornell.edu/cfr/text/21/1306.12</a></li><li id="ref-19">21 USC §841 — Prohibited acts A (unlawful distribution). <a href="https://www.law.cornell.edu/uscode/text/21/841" target="_blank" rel="noopener">www.law.cornell.edu/uscode/text/21/841</a></li><li id="ref-20">New York Public Health Law §3343-a — Prescription Monitoring Program registry; duty to consult (I-STOP). <a href="https://www.nysenate.gov/legislation/laws/PBH/3343-A" target="_blank" rel="noopener">www.nysenate.gov/legislation/laws/PBH/3343-A</a></li><li id="ref-21">N.J.S.A. 45:1-46.1 (P.L.2017, c.341) — PMP access requirements for practitioners. <a href="https://law.justia.com/codes/new-jersey/title-45/section-45-1-46-1/" target="_blank" rel="noopener">law.justia.com/codes/new-jersey/title-45/section-45-1-46-1/</a></li><li id="ref-22">DEA consumer guidance on safe storage and disposal of controlled-substance medications.</li></ol>
+</div></section>
+
+<section id="download" class="chapter alt"><div class="wrap center reveal">
+  <h2>Take it with you</h2>
+  <p class="lede">The Word document contains every section with a short explainer, the inclusion rule for each block, and its exact text and authority.</p>
+  <a class="cta" href="downloads/Controlled-Substance-Agreement-Clause-Library.docx" download>Download the clause library (.docx)</a>
+  <p class="foot">Clause library v1.0.0 · Scope: New York and New Jersey · <a href="index.html">Classic version</a></p>
+</div></section>
+</main>
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Count-up numbers.
+  function count(el) {
+    if (el.dataset.done) return; el.dataset.done = 1;
+    var end = +el.dataset.count, t0 = null, dur = reduce ? 0 : 900;
+    function f(t) { t0 = t0 || t; var k = dur ? Math.min(1, (t - t0) / dur) : 1;
+      el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))).toLocaleString(); if (k < 1) requestAnimationFrame(f); }
+    requestAnimationFrame(f);
+  }
+
+  // Scrollytelling: the step crossing mid-screen drives its stage.
+  document.querySelectorAll('.scrolly').forEach(function (sc) {
+    var stage = sc.querySelector('.stage');
+    var steps = sc.querySelectorAll('.step');
+    function activate(step) {
+      var n = +step.dataset.step;
+      steps.forEach(function (s) { s.classList.toggle('active', s === step); });
+      stage.dataset.step = n;
+      stage.querySelectorAll('[data-from]').forEach(function (el) {
+        var on = n >= +el.dataset.from; el.classList.toggle('on', on);
+        if (on) el.querySelectorAll('[data-count]').forEach(count);
+      });
+      var hl = step.dataset.hl;
+      if (hl) stage.querySelectorAll('.blk').forEach(function (b) {
+        var tags = b.dataset.tags.split(' ');
+        b.classList.toggle('dim', hl !== 'none' && hl !== 'all' && tags.indexOf(hl) < 0);
+        b.classList.toggle('lit', hl === 'all' || tags.indexOf(hl) >= 0);
+      });
+    }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) activate(e.target); });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    steps.forEach(function (s) { io.observe(s); });
+  });
+
+  // Reveal-on-scroll for everything else.
+  var ro = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); e.target.querySelectorAll('[data-count]').forEach(count); ro.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -12% 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { ro.observe(el); });
+
+  // Reading-progress bar.
+  var bar = document.querySelector('.progress i');
+  function prog() { var h = document.documentElement; bar.style.transform = 'scaleX(' + (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) + ')'; }
+  document.addEventListener('scroll', prog, { passive: true }); prog();
+})();
+</script>
+<script>
+(function () {
+  var qr = document.getElementById('qr'); if (!qr) return;
+  var btn = qr.querySelector('.qr-toggle');
+  btn.addEventListener('click', function () {
+    var small = qr.classList.toggle('small');
+    btn.textContent = small ? '+' : '–';
+    btn.title = small ? 'Enlarge QR code' : 'Shrink QR code';
+    btn.setAttribute('aria-expanded', String(!small));
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "cs-agreement-presentation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build/build-page.mjs && node build/build-docx.mjs"
+  },
+  "devDependencies": {
+    "docx": "9.7.1",
+    "qrcode": "1.5.4"
+  }
+}

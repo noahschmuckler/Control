@@ -4,16 +4,18 @@ A static, scroll-down presentation of the modular controlled-substance
 prescribing agreement builder (NY / NJ; opioids, benzodiazepines, stimulants),
 plus a downloadable Word clause library.
 
-- `index.html`, `assets/style.css` — the page (generated; no runtime JS)
+- `index.html` — classic scroll-down page; `story.html` — animated, scroll-driven version of the same material (each links to the other)
+- `assets/style.css` (shared), `assets/story.css` (animation layer; honours reduced-motion)
+- Both pages carry a fixed QR code linking to their own published URL (set in `build/qr.mjs`)
 - `downloads/Controlled-Substance-Agreement-Clause-Library.docx` — every section, explainer, inclusion rule, authority and exact block text
 - `data/clause-library.json` — the clause library the builder uses (single source of truth)
-- `build/` — generators. `model.mjs` ports the builder's tier-suggestion, naloxone and assembly logic
+- `build/` — generators. `fragments.mjs` holds HTML shared by both pages; `story.mjs` the animated page; `model.mjs` ports the builder's tier-suggestion, naloxone and assembly logic
 
 ## Rebuild
 
 ```sh
-node build/build-page.mjs
-node build/build-docx.mjs   # needs the `docx` npm package
+npm install
+npm run build   # writes index.html, story.html and the .docx
 ```
 
 ## Publish on GitHub Pages
