@@ -587,12 +587,15 @@
 (function () {
   var qr = document.getElementById('qr'); if (!qr) return;
   var btn = qr.querySelector('.qr-toggle');
-  btn.addEventListener('click', function () {
-    var small = qr.classList.toggle('small');
+  function set(small) {
+    qr.classList.toggle('small', small);
     btn.textContent = small ? '+' : '–';
     btn.title = small ? 'Enlarge QR code' : 'Shrink QR code';
     btn.setAttribute('aria-expanded', String(!small));
-  });
+  }
+  // Phone viewers usually arrived by scanning it: start small there.
+  if (window.matchMedia('(max-width: 720px)').matches) set(true);
+  btn.addEventListener('click', function () { set(!qr.classList.contains('small')); });
 })();
 </script>
 </body>

@@ -1,7 +1,7 @@
 // Generates index.html (classic scroll) and story.html (animated scroll)
 // from the clause library. Run: node build/build-page.mjs
 
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, copyFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import {
@@ -12,6 +12,13 @@ import { qrWidget, QR_SCRIPT, PAGES_URL } from './qr.mjs';
 import { storyHtml } from './story.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+// Vendored smooth-scroll library for the animated page (MIT, see LENIS-LICENSE.txt).
+const vendor = join(root, 'assets', 'vendor');
+mkdirSync(vendor, { recursive: true });
+for (const [from, to] of [['dist/lenis.min.js', 'lenis.min.js'], ['dist/lenis.css', 'lenis.css'], ['LICENSE', 'LENIS-LICENSE.txt']]) {
+  copyFileSync(join(root, 'node_modules', 'lenis', from), join(vendor, to));
+}
 
 const html = `<!doctype html>
 <html lang="en">
