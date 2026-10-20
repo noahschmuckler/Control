@@ -1,0 +1,474 @@
+{
+  "schema_version": "1.0.0",
+  "title": "CS Contract Builder",
+  "org": "Crystal Run Healthcare / Optum NY/NJ",
+  "scope": "New York and New Jersey only",
+  "change_log": [
+    {
+      "version": "1.0.0",
+      "date": "2026-05-25",
+      "author": "N. Schmuckler MD",
+      "summary": "Initial schema — ADHD, opioid, and benzodiazepine modules"
+    }
+  ],
+  "next_review_offset_months": {
+    "standard": 12,
+    "enhanced": 6,
+    "high-risk": 3
+  },
+  "class_codes": {
+    "opioid": "OPT",
+    "benzo": "BNZ",
+    "stimulant": "STM",
+    "multi-class": "MULTI"
+  },
+  "tier_codes": {
+    "standard": "STD",
+    "enhanced": "ENH",
+    "high-risk": "HR"
+  },
+  "class_labels": {
+    "opioid": "opioid",
+    "benzo": "benzodiazepine",
+    "stimulant": "stimulant",
+    "multi-class": "controlled substance"
+  },
+  "module_class_map": {
+    "adhd": "stimulant",
+    "opiates": "opioid",
+    "benzos": "benzo"
+  },
+  "sections": [
+    {
+      "section_id": "S1",
+      "title": "Scope and Parties",
+      "order": 1,
+      "clauses": [
+        {
+          "clause_id": "S1-FIXED-HEADER",
+          "section": "S1",
+          "type": "fixed",
+          "condition": null,
+          "text": "CONTROLLED SUBSTANCE PRESCRIBING AGREEMENT\n\nThis agreement is entered into between [PROVIDER NAME], [TITLE], of Crystal Run Healthcare, and [PATIENT NAME] (Date of Birth: [DOB]) on [DATE]. This agreement covers the following medication(s): [MEDICATION, DOSE, FREQUENCY].\n\nThis agreement is a clinical document establishing shared expectations for the prescribing relationship. It is advisory in nature; experienced providers retain clinical discretion. Nothing in this agreement limits the provider's ability to exercise independent clinical judgment.",
+          "authority": "CDC 2022 Recommendation 5 (establish treatment goals and care plan at inherited-patient first visit); ASAM/ACMT 2025 (pretaper assessment framework)",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S1-VAR-INDICATION-ESTABLISHED",
+          "section": "S1",
+          "type": "variable",
+          "condition": {
+            "field": "indication_status",
+            "eq": "established"
+          },
+          "text": "Indication: This agreement covers [MEDICATION] prescribed for the management of [DIAGNOSED CONDITION], documented in the medical record.",
+          "authority": "Standard documentation practice",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S1-VAR-INDICATION-INHERITED",
+          "section": "S1",
+          "type": "variable",
+          "condition": {
+            "field": "indication_status",
+            "eq": "inherited-presumptive"
+          },
+          "text": "Indication: This agreement covers [MEDICATION] as an inherited prescription. A clinical assessment to formally establish the indication is planned within [N] visits. Continuation at this time is to prevent precipitated withdrawal or abrupt discontinuation harm pending that assessment. This continuation does not constitute endorsement of the prior prescribing provider's clinical decisions.",
+          "authority": "CDC 2022 Recommendation 5; ASAM/ACMT 2025 Section on Inherited Patients",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S1-VAR-INDICATION-NONE",
+          "section": "S1",
+          "type": "variable",
+          "condition": {
+            "field": "indication_status",
+            "eq": "none-pending-assessment"
+          },
+          "text": "Indication: No documented clinical indication has been established for [MEDICATION] at this time. This agreement covers a bridge supply only, issued to prevent precipitated withdrawal while a full clinical assessment is completed within [N] visits. Continuation beyond that assessment requires an established indication.",
+          "authority": "ASAM/ACMT 2025; institutional risk management",
+          "proposed_institutional_standard": true
+        }
+      ]
+    },
+    {
+      "section_id": "S2",
+      "title": "Patient Obligations",
+      "order": 2,
+      "clauses": [
+        {
+          "clause_id": "S2-FIXED-SINGLE-PRESCRIBER",
+          "section": "S2",
+          "type": "fixed",
+          "condition": null,
+          "text": "Single prescriber: I agree to obtain [MEDICATION CLASS] prescriptions from a single prescriber — the provider named in this agreement. I will not seek prescriptions for [MEDICATION CLASS] from any other provider without the knowledge and documented coordination of my prescribing provider.",
+          "authority": "21 CFR §1306.04 (legitimate medical purpose standard); standard of care convention",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S2-FIXED-SINGLE-PHARMACY",
+          "section": "S2",
+          "type": "fixed",
+          "condition": null,
+          "text": "Single pharmacy: I agree to fill all prescriptions for [MEDICATION] at a single pharmacy: [PHARMACY NAME AND LOCATION]. I will notify my provider in advance if I need to use a different pharmacy due to supply issues, travel, or insurance requirements, and will document the reason.",
+          "authority": "Institutional risk management",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S2-FIXED-AS-PRESCRIBED",
+          "section": "S2",
+          "type": "fixed",
+          "condition": null,
+          "text": "Use as prescribed: I agree to take [MEDICATION] only as prescribed — at the prescribed dose, frequency, and for the prescribed indication. I will not adjust my dose without discussing it with my provider first.",
+          "authority": "Standard prescribing agreement element; CDC 2022",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S2-FIXED-NO-SHARING",
+          "section": "S2",
+          "type": "fixed",
+          "condition": null,
+          "text": "No sharing or transfer: I understand that sharing, selling, or otherwise transferring my controlled substance prescription to another person is a federal felony under 21 USC §841. I agree not to do so.",
+          "authority": "21 USC §841",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S2-FIXED-SAFE-STORAGE",
+          "section": "S2",
+          "type": "fixed",
+          "condition": null,
+          "text": "Safe storage: I agree to store [MEDICATION] in a secure location, out of reach of children and visitors. I understand that proper storage is my responsibility.",
+          "authority": "CDC 2022; DEA guidance on safe medication storage",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S2-FIXED-DISCLOSURE",
+          "section": "S2",
+          "type": "fixed",
+          "condition": null,
+          "text": "Disclosure: I agree to inform my provider of all other medications, supplements, and substances I am using, including over-the-counter medications, alcohol, cannabis, and any controlled substances prescribed by other providers.",
+          "authority": "Standard safety monitoring practice",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S2-VAR-PDMP-NY",
+          "section": "S2",
+          "type": "variable",
+          "condition": {
+            "field": "state",
+            "eq": "NY"
+          },
+          "text": "Prescription monitoring: I understand that my provider is required by New York Public Health Law §3343-a (I-STOP) to review the New York State Prescription Monitoring Program registry before every prescription of this controlled substance. I consent to this review.",
+          "authority": "NY Public Health Law §3343-a",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S2-VAR-PDMP-NJ",
+          "section": "S2",
+          "type": "variable",
+          "condition": {
+            "field": "state",
+            "eq": "NJ"
+          },
+          "text": "Prescription monitoring: I understand that my provider is required by NJSA 45:1-46.1 to review the New Jersey Prescription Monitoring Program at my first visit and quarterly during ongoing therapy. I consent to this review.",
+          "authority": "NJSA 45:1-46.1 (P.L.2017 c.341)",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S2-VAR-UDS-STANDARD",
+          "section": "S2",
+          "type": "variable",
+          "condition": {
+            "field": "risk_tier",
+            "eq": "standard"
+          },
+          "text": "Drug screening: I agree to provide urine samples for drug screening when requested by my provider, at a frequency of approximately every 6–12 months or as clinically indicated. I understand that the purpose of this screening is to support safe prescribing, not to punish me.",
+          "authority": "AAPM/APS expert consensus; CDC 2022 (at least annually)",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S2-VAR-UDS-ENHANCED",
+          "section": "S2",
+          "type": "variable",
+          "condition": {
+            "field": "risk_tier",
+            "eq": "enhanced"
+          },
+          "text": "Drug screening: I agree to provide urine samples for drug screening when requested by my provider, at a frequency of approximately every 3 months or as clinically indicated. I understand that the purpose of this screening is to support safe prescribing, not to punish me.",
+          "authority": "AAPM/APS expert consensus (1–3 times/year for moderate risk)",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S2-VAR-UDS-HIGHRISK",
+          "section": "S2",
+          "type": "variable",
+          "condition": {
+            "field": "risk_tier",
+            "eq": "high-risk"
+          },
+          "text": "Drug screening: I agree to provide urine samples for drug screening at every visit or as requested by my provider. I understand that the purpose of this screening is to support safe prescribing and my safety, not to punish me.",
+          "authority": "AAPM/APS expert consensus; institutional high-risk monitoring standard",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S2-VAR-NO-EARLY-REFILLS",
+          "section": "S2",
+          "type": "fixed",
+          "condition": null,
+          "text": "Refill timing: I understand that my medication will be prescribed on a set schedule. I agree not to request early refills except in advance for documented travel or documented supply-chain issues. I understand that federal law (21 CFR §1306.12) permits multiple sequential prescriptions with earliest fill dates for up to 90 days of supply when clinically appropriate.",
+          "authority": "21 CFR §1306.12; CDC 2022",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S2-VAR-NO-REPLACEMENT",
+          "section": "S2",
+          "type": "variable",
+          "condition": null,
+          "text": "Lost or stolen medication: I understand that Crystal Run Healthcare's policy is not to replace lost or stolen controlled substance prescriptions. I understand that this is an institutional policy; federal law does not categorically prohibit replacement. If my medication is lost or stolen, I agree to report the loss to my provider and, if stolen, to file a police report.",
+          "authority": "21 CFR §1306.04; ACOEM Opioid Treatment Contract template; institutional policy",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S2-VAR-ER-FORMULATION",
+          "section": "S2",
+          "type": "variable",
+          "condition": {
+            "field": "sud_history",
+            "in": [
+              "past",
+              "active"
+            ]
+          },
+          "text": "Formulation: I understand that my provider has prescribed an extended-release or prodrug formulation of [MEDICATION] because of my history of substance use. I agree not to request a change to an immediate-release formulation without discussing this with my provider.",
+          "authority": "ASAM/AAAP 2024 (stimulants); ASAM/ACMT 2025 (benzodiazepines); institutional SUD-aware prescribing standard",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S2-VAR-PILL-COUNT-ENHANCED",
+          "section": "S2",
+          "type": "variable",
+          "condition": {
+            "field": "risk_tier",
+            "in": [
+              "enhanced",
+              "high-risk"
+            ]
+          },
+          "text": "Pill counts: I agree to bring my medication to any appointment when requested for a pill count. I understand that pill counts may be requested without advance notice.",
+          "authority": "ASAM/AAAP 2024; ASAM/ACMT 2025; institutional enhanced monitoring standard",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S2-VAR-FUNCTIONAL-GOAL",
+          "section": "S2",
+          "type": "fixed",
+          "condition": null,
+          "text": "Treatment goals: I understand that the goal of this medication is to support my daily function — my ability to work, maintain relationships, and carry out daily activities — and to manage [CONDITION]. I understand that improvement in function, even if pain or symptoms are not fully eliminated, is a meaningful treatment outcome. I agree to discuss my functional status at each visit.",
+          "authority": "CDC 2022 (functional improvement as primary goal; PEG scale); ASAM/ACMT 2025",
+          "proposed_institutional_standard": false
+        }
+      ]
+    },
+    {
+      "section_id": "S3",
+      "title": "Provider Obligations",
+      "order": 3,
+      "clauses": [
+        {
+          "clause_id": "S3-FIXED-PDMP-NY",
+          "section": "S3",
+          "type": "variable",
+          "condition": {
+            "field": "state",
+            "eq": "NY"
+          },
+          "text": "PDMP review: My provider will review the New York State Prescription Monitoring Program registry before every prescription of this controlled substance, as required by NY Public Health Law §3343-a.",
+          "authority": "NY Public Health Law §3343-a",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S3-FIXED-PDMP-NJ",
+          "section": "S3",
+          "type": "variable",
+          "condition": {
+            "field": "state",
+            "eq": "NJ"
+          },
+          "text": "PDMP review: My provider will review the New Jersey Prescription Monitoring Program at my first visit and quarterly during ongoing therapy, as required by NJSA 45:1-46.1.",
+          "authority": "NJSA 45:1-46.1",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S3-FIXED-FUNCTIONAL-ASSESSMENT",
+          "section": "S3",
+          "type": "fixed",
+          "condition": null,
+          "text": "Functional assessment: My provider will assess my functional status — including my ability to work, maintain relationships, carry out daily activities, and drive safely — at each visit.",
+          "authority": "CDC 2022; VA/DoD 2022",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S3-VAR-NALOXONE",
+          "section": "S3",
+          "type": "variable",
+          "condition": {
+            "field": "naloxone_indicated",
+            "eq": true
+          },
+          "text": "Naloxone: My provider will offer to prescribe naloxone (overdose reversal medication) and will provide education on its use. I understand why naloxone has been recommended in my situation.",
+          "authority": "CDC 2022 (offer naloxone when: >=50 MME, concurrent benzo, SUD history, sleep-disordered breathing, post-taper/post-incarceration); ASAM/ACMT 2025 (strong recommendation for opioid+benzo)",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S3-VAR-SPECIALIST-HIGHRISK",
+          "section": "S3",
+          "type": "variable",
+          "condition": {
+            "field": "risk_tier",
+            "eq": "high-risk"
+          },
+          "text": "Specialist involvement: My provider will arrange consultation with a specialist — addiction medicine, addiction psychiatry, pain management, or medical toxicology as appropriate — before or alongside continuing this prescription. My provider will coordinate my care and will not simply transfer my care without ensuring continuity.",
+          "authority": "ASAM/AAAP 2024; ASAM/ACMT 2025; CDC 2022",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S3-VAR-REASSESSMENT-STANDARD",
+          "section": "S3",
+          "type": "variable",
+          "condition": {
+            "field": "risk_tier",
+            "eq": "standard"
+          },
+          "text": "Reassessment: My provider will reassess the benefit and risk of continuing this medication at least annually, or sooner if my functional status changes, new concerns emerge, or I request a reassessment.",
+          "authority": "CDC 2022; AAFP 2024; institutional standard",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S3-VAR-REASSESSMENT-ENHANCED",
+          "section": "S3",
+          "type": "variable",
+          "condition": {
+            "field": "risk_tier",
+            "eq": "enhanced"
+          },
+          "text": "Reassessment: My provider will reassess the benefit and risk of continuing this medication at least every 6 months, or sooner if concerns emerge.",
+          "authority": "CDC 2022; AAPM/APS consensus; institutional enhanced monitoring standard",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S3-VAR-REASSESSMENT-HIGHRISK",
+          "section": "S3",
+          "type": "variable",
+          "condition": {
+            "field": "risk_tier",
+            "eq": "high-risk"
+          },
+          "text": "Reassessment: My provider will reassess the benefit and risk of continuing this medication at every visit, and at minimum every 3 months.",
+          "authority": "ASAM/ACMT 2025 (opioid+benzo: every 3 months or every encounter); institutional high-risk standard",
+          "proposed_institutional_standard": true
+        }
+      ]
+    },
+    {
+      "section_id": "S4",
+      "title": "Monitoring and Graduated Response",
+      "order": 4,
+      "clauses": [
+        {
+          "clause_id": "S4-FIXED-MONITORING-FRAMING",
+          "section": "S4",
+          "type": "fixed",
+          "condition": null,
+          "text": "Monitoring purpose: The monitoring activities described in this agreement — PDMP review, urine drug screening, pill counts, functional assessment — are safety tools, not punitive measures. Unexpected monitoring findings will be discussed with me directly before any clinical decisions are made. My provider will apply clinical judgment to each finding and will not dismiss me from care on the basis of a single monitoring result.",
+          "authority": "CDC 2022 (should not dismiss patients from care on the basis of toxicology results or PDMP information); ASAM/ACMT 2025",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S4-FIXED-GRADUATED-RESPONSE",
+          "section": "S4",
+          "type": "fixed",
+          "condition": null,
+          "text": "Response to concerns: If a monitoring finding, pattern of requests, or clinical concern arises, my provider will follow a graduated approach:\n\n(1) First concern: Direct conversation, documentation, and reassessment of the monitoring plan. No automatic change to the prescription.\n\n(2) Repeated or escalating concern: Formal review within the controlled substance agreement framework, urine drug screen if not already done, PDMP review, and discussion of whether the current management plan remains appropriate. Specialist input may be sought.\n\n(3) Significant or unresolved concern: Specialist consultation before continuing. Continuation may not be appropriate without specialist co-management. If I am not able to continue in this practice, my provider will ensure I receive a referral or bridge plan — I will not be abruptly abandoned.",
+          "authority": "CDC 2022; ASAM/ACMT 2025; AAFP (avoid dismissing patients); APS/AAPM 2009 (graduated response to aberrant behaviors)",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S4-VAR-DRIVING",
+          "section": "S4",
+          "type": "variable",
+          "condition": {
+            "field": "driving_or_safety_sensitive",
+            "eq": true
+          },
+          "text": "Driving and safety-sensitive activities: My provider has counseled me that [MEDICATION CLASS] may impair driving and the operation of heavy machinery. I acknowledge this counseling. [IF SAFETY-SENSITIVE OCCUPATION: I understand that my occupation as [OCCUPATION] may have specific regulatory requirements regarding controlled substance use, and I agree to comply with applicable reporting obligations.]",
+          "authority": "Dassanayake meta-analysis (driving risk); Tran JAMA Network Open 2024 (reporting obligations by state); FAA/FMCSA regulations for safety-sensitive occupations",
+          "proposed_institutional_standard": true
+        },
+        {
+          "clause_id": "S4-VAR-AGE-65",
+          "section": "S4",
+          "type": "variable",
+          "condition": {
+            "field": "age_65_plus",
+            "eq": true
+          },
+          "text": "Age-related risks: My provider has discussed with me that benzodiazepines and sedating medications carry increased risks of falls, fractures, and cognitive effects in adults over 65, as noted in the American Geriatrics Society Beers Criteria. I understand these risks and have discussed them with my provider. My provider and I have agreed on the clinical rationale for continuing this medication at this time, and will reassess annually or sooner if my functional status changes.",
+          "authority": "AGS Beers Criteria 2023; Donnelly PLoS One 2017 (fracture risk); Crowe Arch Clin Neuropsychol 2018 (cognitive effects)",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S4-VAR-COMBO-OPIOID-BENZO",
+          "section": "S4",
+          "type": "variable",
+          "condition": {
+            "field": "combo_opioid_benzo",
+            "eq": true
+          },
+          "text": "Opioid + benzodiazepine combination: My provider has informed me that I am prescribed both an opioid and a benzodiazepine. I understand that this combination carries an elevated risk of serious adverse outcomes including overdose. My provider has prescribed naloxone and has counseled my household on its use. I understand that the long-term goal is to reduce the overall burden of these medications, and that specialist input will be sought to plan any changes safely.",
+          "authority": "FDA boxed warning (2016); CDC 2022 Recommendation 11 (Category B); ASAM/ACMT 2025 (naloxone strong recommendation); Hernandez JAMA Network Open 2018 (time-dependent risk)",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S4-VAR-SUD-AWARE",
+          "section": "S4",
+          "type": "variable",
+          "condition": {
+            "field": "sud_history",
+            "in": [
+              "past",
+              "active"
+            ]
+          },
+          "text": "Substance use history: My provider is aware of my history of substance use and has considered it in prescribing this medication. I understand that my provider has chosen to use [extended-release / prodrug formulation] to reduce misuse risk. I agree to the enhanced monitoring plan described in this agreement. I understand that this agreement reflects my provider's care for my health, not a judgment about my character.",
+          "authority": "ASAM/AAAP 2024; ASAM/ACMT 2025; Baweja JAACAP 2025 (outcomes data)",
+          "proposed_institutional_standard": true
+        }
+      ]
+    },
+    {
+      "section_id": "S5",
+      "title": "Acknowledgment and Signatures",
+      "order": 5,
+      "clauses": [
+        {
+          "clause_id": "S5-FIXED-ACKNOWLEDGMENT",
+          "section": "S5",
+          "type": "fixed",
+          "condition": null,
+          "text": "I have read this agreement and have had the opportunity to ask questions. I understand its contents and agree to its terms. I understand that this agreement may be updated at any time with my participation, and that I will be given a copy of any updated agreement to review before signing.\n\nI understand that this agreement is a clinical document, not a legal contract, and that my provider retains clinical discretion at all times.",
+          "authority": "Institutional standard; CDC 2022",
+          "proposed_institutional_standard": false
+        },
+        {
+          "clause_id": "S5-FIXED-SIGNATURES",
+          "section": "S5",
+          "type": "fixed",
+          "condition": null,
+          "text": "Patient signature: _________________________ Date: _____________\n\nPrinted name: _________________________\n\nProvider signature: _________________________ Date: _____________\n\nProvider name and title: _________________________\n\nNext scheduled review: _________________________\n\nContract version: [VERSION STAMP] | Crystal Run Healthcare / Optum NY/NJ",
+          "authority": "Institutional standard",
+          "proposed_institutional_standard": false
+        }
+      ]
+    }
+  ]
+}
